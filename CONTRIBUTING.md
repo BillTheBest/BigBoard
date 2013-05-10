@@ -1,5 +1,5 @@
-contributing.txt
-================
+CONTRIBUTING.md
+===============
 
 TODO: Finish document.
 

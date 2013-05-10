@@ -1,5 +1,5 @@
-readme.txt
-==========
+README.md
+=========
 
 - BigBoard is composed of a html/css/js front end with a Java backend.
 - BigBoard can either be run as an executable jar or installed in a java Application Server, like Apache Tomcat.
