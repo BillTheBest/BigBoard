@@ -1,0 +1,7 @@
+{
+  "wwdc": {
+    "label": "Days to WWDC",
+    "date": "2013-06-10",
+    "pastDateBehaviour": "negative"
+  }
+}

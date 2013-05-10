@@ -1,0 +1,98 @@
+ 
+
+
+ 
+ Pickle Lake - Weather - Environment Canada
+ http://www.weatheroffice.gc.ca
+ Current weather conditions, forecasts and warnings for: Pickle Lake
+ en-ca
+ Copyright 2013, Environment Canada
+ 
+ No watches or warnings in effect, Pickle Lake
+ http://www.weatheroffice.gc.ca/warnings/warnings_e.html
+ No watches or warnings in effect.
+ Warnings and Watches
+ on-120_w1 24 Jan 2013 17:30:00 GMT
+ 24 Jan 2013 17:30:00 GMT
+ 
+ 
+ Current Conditions: Mainly Clear, -25.3?C
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ <b>Observed at:</b> Pickle Lake Airport 7:00 PM EST Wednesday 06 February 2013 <br/>
+<b>Condition:</b> Mainly Clear <br/>
+<b>Temperature:</b> -25.3&deg;C <br/>
+<b>Pressure / Tendency:</b> 102.9 kPa rising<br/>
+<b>Visibility:</b> 24.1 km<br/>
+<b>Humidity:</b> 65 %<br/>
+<b>Wind Chill:</b> -32 <br/>
+<b>Dewpoint:</b> -30.1&deg;C <br/>
+<b>Wind:</b> ENE 7 km/h<br/>
+<b>Air Quality Health Index:</b> N/A <br/>
+
+ Current Conditions
+ on-120_cc 07 Feb 2013 00:00:00 GMT
+ 07 Feb 2013 00:00:00 GMT
+ 
+ 
+ Wednesday night: Clear. Low minus 37.
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ Clear. Low minus 37. Forecast issued 4:00 PM EST Wednesday 06 February 2013
+ Weather Forecasts
+ on-120_fc1 06 Feb 2013 21:00:00 GMT
+ 06 Feb 2013 21:00:00 GMT
+ 
+ 
+ Thursday: Sunny. High minus 19.
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ Sunny. High minus 19. Forecast issued 4:00 PM EST Wednesday 06 February 2013
+ Weather Forecasts
+ on-120_fc2 06 Feb 2013 21:00:00 GMT
+ 06 Feb 2013 21:00:00 GMT
+ 
+ 
+ Thursday night: Clear. Low minus 29.
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ Clear. Low minus 29. Forecast issued 4:00 PM EST Wednesday 06 February 2013
+ Weather Forecasts
+ on-120_fc3 06 Feb 2013 21:00:00 GMT
+ 06 Feb 2013 21:00:00 GMT
+ 
+ 
+ Friday: A mix of sun and cloud. High minus 10.
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ A mix of sun and cloud. High minus 10. Forecast issued 4:00 PM EST Wednesday 06 February 2013
+ Weather Forecasts
+ on-120_fc4 06 Feb 2013 21:00:00 GMT
+ 06 Feb 2013 21:00:00 GMT
+ 
+ 
+ Saturday: Flurries. Low minus 12. High minus 5.
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ Flurries. Low minus 12. High minus 5. Forecast issued 4:00 PM EST Wednesday 06 February 2013
+ Weather Forecasts
+ on-120_fc5 06 Feb 2013 21:00:00 GMT
+ 06 Feb 2013 21:00:00 GMT
+ 
+ 
+ Sunday: A mix of sun and cloud. Low minus 14. High minus 12.
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ A mix of sun and cloud. Low minus 14. High minus 12. Forecast issued 4:00 PM EST Wednesday 06 February 2013
+ Weather Forecasts
+ on-120_fc6 06 Feb 2013 21:00:00 GMT
+ 06 Feb 2013 21:00:00 GMT
+ 
+ 
+ Monday: Chance of flurries. Low minus 20. High minus 12. POP 30%
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ A mix of sun and cloud with 30 percent chance of flurries. Low minus 20. High minus 12. Forecast issued 4:00 PM EST Wednesday 06 February 2013
+ Weather Forecasts
+ on-120_fc7 06 Feb 2013 21:00:00 GMT
+ 06 Feb 2013 21:00:00 GMT
+ 
+ 
+ Tuesday: Chance of flurries. Low minus 18. High minus 10. POP 60%
+ http://www.weatheroffice.gc.ca/city/pages/on-120_metric_e.html
+ Cloudy with 60 percent chance of flurries. Low minus 18. High minus 10. Forecast issued 4:00 PM EST Wednesday 06 February 2013
+ Weather Forecasts
+ on-120_fc8 06 Feb 2013 21:00:00 GMT
+ 06 Feb 2013 21:00:00 GMT

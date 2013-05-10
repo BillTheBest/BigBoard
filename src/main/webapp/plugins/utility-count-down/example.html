@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>utility-count-down</title>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=UTF-8" />
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes" />
+
+
+<!--                          -->
+<!-- BEGIN Example -->
+<!--                          -->
+
+<script
+  type="text/javascript"
+  src="../../js/jquery-1.9.1.min.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="../../css/demo-style.css" />
+
+<style>
+div#fullScreen {
+ background-color: #000000;
+ height: 100%;
+ width: 100%;
+}
+</style>
+
+
+<!--                          -->
+<!-- END Example boiler plate -->
+<!--                          -->
+
+
+<!-- BEGIN utility-count-down Plugin -->
+
+<script
+  type="text/javascript"
+  src="./js/utility-count-down.js"></script>
+
+<script type="text/javascript">
+  <!-- Update every 5 min or 300000 ms. -->
+  var wwdcCountDown = new UtilityCountDown( 'WwdcCountDown', 30000, 'wwdc' );
+  
+  var wwdcCountDownDocumentReady = function() {
+    
+    wwdcCountDown.update();
+    wwdcCountDown.startUpdates();
+  }
+</script>
+
+<!-- END utility-count-down Plugin -->
+
+
+<style>
+/* Layout */
+#WwdcCountDown {
+ position: absolute;
+ top: 10px;
+ left: 20px;
+}
+</style>
+
+
+<script type="text/javascript">
+  $( document ).ready( function() {
+
+    wwdcCountDownDocumentReady();
+    
+  } );
+</script>
+
+
+</head>
+
+<body>
+  <div id="fullScreen">
+
+    <div
+      id="WwdcCountDown"
+      class="UtilityCountDownContainer">
+      <div class="UtilityCountDown"></div>
+    </div>
+
+  </div>
+</body>
+</html>

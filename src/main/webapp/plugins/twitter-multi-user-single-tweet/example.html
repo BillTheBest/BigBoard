@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>twitter-multi-user-single-tweet</title>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=UTF-8" />
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes" />
+
+
+<!--                          -->
+<!-- BEGIN Example -->
+<!--                          -->
+
+<script
+  type="text/javascript"
+  src="../../js/jquery-1.9.1.min.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="../../css/demo-style.css" />
+
+<style>
+div#fullScreen {
+ background-color: #000000;
+ height: 100%;
+ width: 100%;
+}
+</style>
+
+
+<!--                          -->
+<!-- END Example boiler plate -->
+<!--                          -->
+
+
+<!-- BEGIN twitter-multi-user-single-tweet Plugin -->
+
+<script
+  type="text/javascript"
+  src="./js/twitter-multi-user-single-tweet.js"></script>
+
+<script type="text/javascript">
+  var model = {
+    currentScreenNamesIndex : 0,
+    screenNames : [ {
+      screenName : 'CP24',
+      currentTweetIndex : 0
+    }, {
+      screenName : 'BBCbreaking',
+      currentTweetIndex : 0
+    }, {
+      screenName : 'Reuters',
+      currentTweetIndex : 0
+    }, {
+      screenName : 'AJEnglish',
+      currentTweetIndex : 0
+    } ]
+  };
+  
+  var newsTwitterMultiUserSingleTweet = new TwitterMultiUserSingleTweet( model, 2000 );
+  
+  var newsTwitterMultiUserSingleTweetDocumentReady = function() {
+
+    // Not needed b/c newsTwitterMultiUserSingleTweet interval is short.
+    //newsTwitterMultiUserSingleTweet.update();
+    newsTwitterMultiUserSingleTweet.startUpdates();
+  }
+</script>
+
+<!-- END twitter-multi-user-single-tweet Plugin -->
+
+
+<style>
+#CP24.TwitterMultiUserSingleTweetContainer {
+ position: absolute;
+ top: 60px;
+ left: 10px;
+}
+
+#BBCbreaking.TwitterMultiUserSingleTweetContainer {
+ position: absolute;
+ top: 160px;
+ left: 10px;
+}
+
+#Reuters.TwitterMultiUserSingleTweetContainer {
+ position: absolute;
+ top: 260px;
+ left: 10px;
+}
+
+#AJEnglish.TwitterMultiUserSingleTweetContainer {
+ position: absolute;
+ top: 360px;
+ left: 10px;
+}
+</style>
+
+
+<script type="text/javascript">
+  $( document ).ready( function() {
+
+    newsTwitterMultiUserSingleTweetDocumentReady();
+    
+  } );
+</script>
+
+
+</head>
+
+<body>
+  <div id="fullScreen">
+
+    <div
+      id="CP24"
+      class="TwitterMultiUserSingleTweetContainer">
+      <div class="TwitterMultiUserSingleTweet"></div>
+    </div>
+
+
+    <div
+      id="BBCbreaking"
+      class="TwitterMultiUserSingleTweetContainer">
+      <div class="TwitterMultiUserSingleTweet"></div>
+    </div>
+
+
+    <div
+      id="Reuters"
+      class="TwitterMultiUserSingleTweetContainer">
+      <div class="TwitterMultiUserSingleTweet"></div>
+    </div>
+
+
+    <div
+      id="AJEnglish"
+      class="TwitterMultiUserSingleTweetContainer">
+      <div class="TwitterMultiUserSingleTweet"></div>
+    </div>
+
+  </div>
+</body>
+</html>

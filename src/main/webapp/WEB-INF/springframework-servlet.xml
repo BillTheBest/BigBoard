@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+
+	<!-- BEGIN Typical Spring config -->
+
+	<context:component-scan base-package="ca.gordonturner.bigboard.web" />
+	<context:annotation-config />
+
+	<mvc:annotation-driven />
+
+	<!-- END Typical Spring config -->
+
+
+	<!-- BEGIN Property Placeholder config -->
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:big-board-default.properties</value>
+
+				<!-- -->
+				<!-- Place override files in Tomcat conf directory. -->
+				<!-- -->
+				<value>file:${catalina.home}/conf/big-board-override.properties
+				</value>
+
+			</list>
+		</property>
+
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="ignoreResourceNotFound" value="true" />
+
+	</bean>
+
+	<!-- END Property Placeholder config -->
+
+
+	<!-- BEGIN Services -->
+
+	<bean id="twitterMultiUserSingleTweet"
+		class="ca.gordonturner.bigboard.web.twitter.TwitterMultiUserSingleTweet"
+		init-method="init">
+	</bean>
+
+
+  <bean id="twitterSingleUserMultiTweet"
+    class="ca.gordonturner.bigboard.web.twitter.TwitterSingleUserMultiTweet"
+    init-method="init">
+  </bean>
+
+
+  <bean id="twitterTrendingTopics"
+    class="ca.gordonturner.bigboard.web.twitter.TwitterTrendingTopics"
+    init-method="init">
+  </bean>
+
+
+  <bean id="weatherEnvironmentCanada"
+    class="ca.gordonturner.bigboard.web.weather.WeatherEnvironmentCanada"
+    init-method="init">
+  </bean>
+
+
+  <bean id="utilityAppFiguresSales"
+    class="ca.gordonturner.bigboard.web.utility.UtilityAppFiguresSales"
+    init-method="init">
+  </bean>
+
+	<!-- END Services -->
+
+
+	<!-- BEGIN ViewResolver Beans -->
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+	<!-- END ViewResolver Beans -->
+
+
+</beans>

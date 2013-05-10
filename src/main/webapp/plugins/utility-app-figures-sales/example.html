@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>utility-app-figures-sales</title>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=UTF-8" />
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes" />
+
+
+<!--                          -->
+<!-- BEGIN Example -->
+<!--                          -->
+
+<script
+  type="text/javascript"
+  src="../../js/jquery-1.9.1.min.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="../../css/demo-style.css" />
+
+<style>
+div#fullScreen {
+ background-color: #000000;
+ height: 100%;
+ width: 100%;
+}
+</style>
+
+
+<!--                          -->
+<!-- END Example boiler plate -->
+<!--                          -->
+
+
+<!-- BEGIN utility-app-figures-sales Plugin -->
+
+<script
+  type="text/javascript"
+  src="./js/utility-app-figures-sales.js"></script>
+
+<script type="text/javascript">
+  var typeLessUtilityAppFiguresSales = new UtilityAppFiguresSales( 'TypeLess', 300000, 'TypeLess', 395690, 105 );
+  
+  var typeLessUtilityAppFiguresSalesDocumentReady = function() {
+
+    typeLessUtilityAppFiguresSales.update();
+    typeLessUtilityAppFiguresSales.startUpdates();
+  }
+</script>
+
+<!-- END utility-app-figures-sales Plugin -->
+
+
+<style>
+#TypeLess {
+ position: absolute;
+ top: 10px;
+ left: 20px;
+}
+</style>
+
+
+<script type="text/javascript">
+  $( document ).ready( function() {
+
+    typeLessUtilityAppFiguresSalesDocumentReady();
+    
+  } );
+</script>
+
+
+</head>
+
+<body>
+  <div id="fullScreen">
+
+    <div
+      id="TypeLess"
+      class="UtilityAppFiguresSalesContainer">
+      <div class="UtilityAppFiguresSales"></div>
+    </div>
+
+  </div>
+</body>
+</html>

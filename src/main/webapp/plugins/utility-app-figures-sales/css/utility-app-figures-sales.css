@@ -1,0 +1,31 @@
+/* BEGIN UtilityAppFiguresSales */
+.UtilityAppFiguresSalesContainer {
+	width: 710px;
+	height: 68px;
+	color: rgb(170, 170, 170);
+}
+
+.UtilityAppFiguresSales {
+	margin: auto;
+	font-size: 30px;
+}
+
+/* Name */
+.UtilityAppFiguresSales .name {
+	float: right;
+	width: 635px;
+	text-align: right;
+	margin-right: 70px;
+}
+
+/* Details */
+.UtilityAppFiguresSales .details {
+	/* This allows the use of a width */
+	float: right;
+  width: 100px;
+  
+  text-align: right;
+  color: green;
+}
+
+/* END UtilityAppFiguresSales */

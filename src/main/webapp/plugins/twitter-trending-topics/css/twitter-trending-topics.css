@@ -1,0 +1,27 @@
+/* BEGIN TwitterTrendingTopics */
+.TwitterTrendingTopicsContainer {
+	width: 450px;
+	height: 550px;
+	color: rgb(170, 170, 170);
+}
+
+.TwitterTrendingTopics {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.TwitterTrendingTopicsTitle {
+	font-size: 30px;
+  margin-left: 100px;
+}
+
+
+.TwitterTrendingTopicsTopic {
+	
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 25px;
+}
+
+/* END TwitterTrendingTopics */

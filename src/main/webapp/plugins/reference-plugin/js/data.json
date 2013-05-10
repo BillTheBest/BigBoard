@@ -1,0 +1,6 @@
+{
+  "instanceReferencePlugin": {
+    "label": "Parameter",
+    "value" : "foo data"
+  }
+}

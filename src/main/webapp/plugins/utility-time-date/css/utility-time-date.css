@@ -1,0 +1,30 @@
+/* BEGIN TimeDate */
+.UtilityTimeDateContainer {
+  /* background-color: #232526; */
+  /* background-image: -webkit-linear-gradient(top, #36393B 0%, #232526 100%); */
+  background: -webkit-linear-gradient(top, rgb(54,57,59) 0%, rgb(35,37, 38) 100%);
+	color: rgb(170, 170, 170);
+  border-radius: 5px;
+}
+
+.UtilityTimeDate {
+	width:  350px;
+	height: 150px;
+	margin: auto;
+}
+
+.UtilityTimeDate div.Time {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 65px;
+}
+
+.UtilityTimeDate div.Date {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 45px;
+}
+
+/* END TimeDate */

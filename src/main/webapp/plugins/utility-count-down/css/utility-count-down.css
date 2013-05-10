@@ -1,0 +1,31 @@
+/* BEGIN UtilityCountDown */
+.UtilityCountDownContainer {
+ width: 600px;
+ height: 50px;
+ color: rgb(170, 170, 170);
+ /* Used to determine boundary for layout. */
+ /* border: white solid 1px; */
+}
+
+.UtilityCountDown {
+ margin: auto;
+ font-size: 30px;
+}
+
+.UtilityCountDown .Label {
+ float: right;
+ width: 635px;
+ text-align: right;
+ /* NOTE: The margin right should match .UtilityCountDown .Value width. */
+ margin-right: 50px;
+}
+
+.UtilityCountDown .Value {
+ float: right;
+ /* NOTE: The width should match .UtilityCountDown .Label margin. */
+ width: 95px;
+ text-align: right;
+ color: #FF9900;
+}
+
+/* END UtilityCountDown */

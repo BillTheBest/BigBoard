@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>twitter-trending-topics</title>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=UTF-8" />
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes" />
+
+
+<!--                          -->
+<!-- BEGIN Example -->
+<!--                          -->
+
+<script
+  type="text/javascript"
+  src="../../js/jquery-1.9.1.min.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="../../css/demo-style.css" />
+
+<style>
+div#fullScreen {
+ background-color: #000000;
+ height: 100%;
+ width: 100%;
+}
+</style>
+
+
+<!--                          -->
+<!-- END Example boiler plate -->
+<!--                          -->
+
+
+<!-- BEGIN twitter-trending-topics Plugin -->
+
+<script
+  type="text/javascript"
+  src="./js/twitter-trending-topics.js"></script>
+
+<script type="text/javascript">
+  // woeid for Toronto: 4118
+  var twitterTrendingTopics = new TwitterTrendingTopics( 'torontoTrending', 350000, '4118' );
+  
+  var twitterTrendingTopicsDocumentReady = function() {
+
+    twitterTrendingTopics.update();
+    twitterTrendingTopics.startUpdates();
+  }
+</script>
+
+<!-- END twitter-trending-topics Plugin -->
+
+
+<style>
+#TwitterTrendingTopics {
+ position: absolute;
+ top: 10px;
+ left: 20px;
+ width: 300px;
+ height: 160px;
+}
+</style>
+
+
+<script type="text/javascript">
+  $( document ).ready( function() {
+
+    twitterTrendingTopicsDocumentReady();
+    
+  } );
+</script>
+
+
+</head>
+
+<body>
+  <div id="fullScreen">
+
+    <div
+      id="torontoTrending"
+      class="TwitterTrendingTopicsContainer">
+      <div class="TwitterTrendingTopicsTitle">Trending</div>
+      <div class="TwitterTrendingTopics"></div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<html>
+<head>
+<title>BigBoard</title>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=UTF-8" />
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes" />
+
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="css/demo-style.css" />
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="css/demo-layout.css" />
+
+<script
+  type="text/javascript"
+  src="js/jquery-1.9.1.min.js"></script>
+
+
+
+<!-- BEGIN weather-environment-canada Plugin -->
+
+<script
+  type="text/javascript"
+  src="./plugins/weather-environment-canada/js/weather-environment-canada.js"></script>
+
+<script type="text/javascript">
+  var torontoWeatherEnvironmentCanada = new WeatherEnvironmentCanada( 'torontoWeather', 120000, 'on-143_e' );
+  
+  var torontoWeatherEnvironmentCanadaDocumentReady = function() {
+
+    torontoWeatherEnvironmentCanada.update();
+    torontoWeatherEnvironmentCanada.startUpdates();
+  }
+</script>
+
+<!-- END weather-environment-canada Plugin -->
+
+
+<!-- BEGIN weather-arduino-web-server-temperature-sensor Plugin -->
+
+<script
+  type="text/javascript"
+  src="./plugins/weather-arduino-web-server-temperature-sensor/js/weather-arduino-web-server-temperature-sensor.js"></script>
+
+<script type="text/javascript">
+  var localWeatherThermometer = new WeatherArduinoWebServerTemperatureSensor( 'localWeatherThermometer', 140000, 'http://192.168.2.70' );
+  
+  var localWeatherThermometerDocumentReady = function() {
+
+    localWeatherThermometer.update();
+    localWeatherThermometer.startUpdates();
+  }
+</script>
+
+<!-- END weather-arduino-web-server-temperature-sensor Plugin -->
+
+
+<!-- BEGIN utility-time-date Plugin -->
+
+<script
+  type="text/javascript"
+  src="./plugins/utility-time-date/js/utility-time-date.js"></script>
+
+<script type="text/javascript">
+  var torontoUtilityTimeDate = new UtilityTimeDate( 'TorontoUtilityTimeDate', 5000 );
+  
+  var torontoUtilityTimeDateDocumentReady = function() {
+
+    torontoUtilityTimeDate.update();
+    torontoUtilityTimeDate.startUpdates();
+  }
+</script>
+
+<!-- END utility-time-date Plugin -->
+
+
+<!-- BEGIN utility-app-figures-sales Plugin -->
+
+<script
+  type="text/javascript"
+  src="./plugins/utility-app-figures-sales/js/utility-app-figures-sales.js"></script>
+
+<script type="text/javascript">
+  var typeLessUtilityAppFiguresSales = new UtilityAppFiguresSales( 'TypeLess', 300000, 'TypeLess', 395690, 105 );
+  var immkUtilityAppFiguresSales = new UtilityAppFiguresSales( 'IMMK', 300000, 'In My Mother\'s Kitchen', 395691, 19 );
+  
+  var typeLessUtilityAppFiguresSalesDocumentReady = function() {
+
+    typeLessUtilityAppFiguresSales.update();
+    typeLessUtilityAppFiguresSales.startUpdates();
+  }
+
+  var immkUtilityAppFiguresSalesDocumentReady = function() {
+
+    immkUtilityAppFiguresSales.update();
+    immkUtilityAppFiguresSales.startUpdates();
+  }
+</script>
+
+<!-- END utility-app-figures-sales Plugin -->
+
+
+<!-- BEGIN twitter-single-user-multi-tweet Plugin -->
+
+<script
+  type="text/javascript"
+  src="./plugins/twitter-single-user-multi-tweet/js/twitter-single-user-multi-tweet.js"></script>
+
+<script type="text/javascript">
+  var ttcNoticesTwitterSingleUserMultiTweet = new TwitterSingleUserMultiTweet( 'TTCnotices', 270000, 'TTCnotices' );
+  
+  var ttcNoticesTwitterSingleUserMultiTweetDocumentReady = function() {
+
+    ttcNoticesTwitterSingleUserMultiTweet.update();
+    ttcNoticesTwitterSingleUserMultiTweet.startUpdates();
+  }
+</script>
+
+<!-- END twitter-single-user-multi-tweet Plugin -->
+
+
+<!-- BEGIN twitter-multi-user-single-tweet Plugin -->
+
+<script
+  type="text/javascript"
+  src="./plugins/twitter-multi-user-single-tweet/js/twitter-multi-user-single-tweet.js"></script>
+
+<script type="text/javascript">
+  var model = {
+    currentScreenNamesIndex : 0,
+    screenNames : [ {
+      screenName : 'CP24',
+      currentTweetIndex : 0
+    }, {
+      screenName : 'BBCbreaking',
+      currentTweetIndex : 0
+    }, {
+      screenName : 'Reuters',
+      currentTweetIndex : 0
+    }, {
+      screenName : 'AJEnglish',
+      currentTweetIndex : 0
+    } ]
+  };
+  
+  var newsTwitterMultiUserSingleTweet = new TwitterMultiUserSingleTweet( model, 10000 );
+  
+  var newsTwitterMultiUserSingleTweetDocumentReady = function() {
+
+    // Not needed b/c newsTwitterMultiUserSingleTweet interval is short.
+    //newsTwitterMultiUserSingleTweet.update();
+    newsTwitterMultiUserSingleTweet.startUpdates();
+  }
+</script>
+
+<!-- END twitter-multi-user-single-tweet Plugin -->
+
+
+<!-- BEGIN twitter-trending-topics Plugin -->
+
+<script
+  type="text/javascript"
+  src="./plugins/twitter-trending-topics/js/twitter-trending-topics.js"></script>
+
+<script type="text/javascript">
+  // woeid for Toronto: 4118
+  var twitterTrendingTopics = new TwitterTrendingTopics( 'torontoTrending', 350000, '4118' );
+  
+  var twitterTrendingTopicsDocumentReady = function() {
+
+    twitterTrendingTopics.update();
+    twitterTrendingTopics.startUpdates();
+  }
+</script>
+
+<!-- END twitter-trending-topics Plugin -->
+
+
+<!-- BEGIN utility-count-down Plugin -->
+
+<script
+  type="text/javascript"
+  src="./plugins/utility-count-down/js/utility-count-down.js"></script>
+
+<script type="text/javascript">
+  <!-- Update every 5 min or 300000 ms. -->
+  var wwdcUtilityCountDown = new UtilityCountDown( 'WwdcUtilityCountDown', 300000, 'wwdc' );
+  
+  var wwdcUtilityCountDownDocumentReady = function() {
+    
+    wwdcUtilityCountDown.update();
+    wwdcUtilityCountDown.startUpdates();
+  }
+</script>
+
+<!-- END utility-count-down Plugin -->
+
+
+
+<script type="text/javascript">
+  $( document ).ready( function() {
+
+    torontoWeatherEnvironmentCanadaDocumentReady();
+    localWeatherThermometerDocumentReady();
+    torontoUtilityTimeDateDocumentReady();
+    typeLessUtilityAppFiguresSalesDocumentReady();
+    immkUtilityAppFiguresSalesDocumentReady();
+    ttcNoticesTwitterSingleUserMultiTweetDocumentReady();
+    newsTwitterMultiUserSingleTweetDocumentReady();
+    twitterTrendingTopicsDocumentReady();
+    wwdcUtilityCountDownDocumentReady();
+    
+  } );
+</script>
+
+
+
+</head>
+
+<body>
+  <div id="fullScreen">
+
+    <div
+      id="TorontoUtilityTimeDate"
+      class="UtilityTimeDateContainer">
+      <div class="UtilityTimeDate"></div>
+    </div>
+
+    <div
+      id="localWeatherThermometer"
+      class="WeatherArduinoWebServerTemperatureSensorContainer">
+      <div class="WeatherArduinoWebServerTemperatureSensor"></div>
+    </div>
+
+    <div
+      id="torontoWeather"
+      class="WeatherEnvironmentCanadaContainer">
+      <div class="WeatherEnvironmentCanada"></div>
+    </div>
+
+
+    <div
+      id="CP24"
+      class="TwitterMultiUserSingleTweetContainer">
+      <div class="TwitterMultiUserSingleTweet"></div>
+    </div>
+
+
+    <div
+      id="BBCbreaking"
+      class="TwitterMultiUserSingleTweetContainer">
+      <div class="TwitterMultiUserSingleTweet"></div>
+    </div>
+
+
+    <div
+      id="Reuters"
+      class="TwitterMultiUserSingleTweetContainer">
+      <div class="TwitterMultiUserSingleTweet"></div>
+    </div>
+
+
+    <div
+      id="AJEnglish"
+      class="TwitterMultiUserSingleTweetContainer">
+      <div class="TwitterMultiUserSingleTweet"></div>
+    </div>
+
+
+    <div
+      id="TTCnotices"
+      class="TwitterSingleUserMultiTweetContainer">
+      <div class="TwitterSingleUserMultiTweet"></div>
+    </div>
+
+
+    <div
+      id="TypeLess"
+      class="UtilityAppFiguresSalesContainer">
+      <div class="UtilityAppFiguresSales"></div>
+    </div>
+
+
+    <div
+      id="IMMK"
+      class="UtilityAppFiguresSalesContainer">
+      <div class="UtilityAppFiguresSales"></div>
+    </div>
+
+
+    <div
+      id="torontoTrending"
+      class="TwitterTrendingTopicsContainer">
+      <div class="TwitterTrendingTopicsTitle">Trending</div>
+      <div class="TwitterTrendingTopics"></div>
+    </div>
+    
+    
+    <div
+      id="WwdcUtilityCountDown"
+      class="UtilityCountDownContainer">
+      <div class="UtilityCountDown"></div>
+    </div>
+    
+    
+    
+    </body>
+</html>

@@ -1,0 +1,118 @@
+/* BEGIN screen style */
+div#fullScreen {
+ background-color: #000000;
+ /* HD 720p */
+ /*
+  width: 1280px;
+  height: 720px;
+  */
+ /* HD 1080p */
+ /* 
+  width: 1920px;
+  height: 1080px;
+  */
+ /* Custom */
+ width: 1920px;
+ height: 1200px;
+}
+
+/* END screen style */
+
+/* BEGIN custom layout for UtilityTimeDate */
+#torontoUtilityTimeDate.UtilityTimeDateContainer {
+ position: absolute;
+ top: 10px;
+ left: 10px;
+ width: 350px;
+ height: 160px;
+}
+
+/* END  custom layout for UtilityTimeDate */
+
+/* BEGIN custom layout for Weather */
+#localWeatherThermometer.WeatherArduinoWebServerTemperatureSensorContainer {
+ position: absolute;
+ top: 10px;
+ left: 665px;
+ width: 300px;
+ height: 160px;
+}
+
+#torontoWeather.WeatherEnvironmentCanadaContainer {
+ position: absolute;
+ top: 10px;
+ left: 990px;
+ width: 920px;
+ height: 160px;
+}
+
+/* END  custom layout for Weather */
+
+/* BEGIN custom layout for TwitterMultiUserSingleTweet */
+#CP24.TwitterMultiUserSingleTweetContainer {
+ position: absolute;
+ top: 360px;
+ left: 10px;
+}
+
+#BBCbreaking.TwitterMultiUserSingleTweetContainer {
+ position: absolute;
+ top: 460px;
+ left: 10px;
+}
+
+#Reuters.TwitterMultiUserSingleTweetContainer {
+ position: absolute;
+ top: 560px;
+ left: 10px;
+}
+
+#AJEnglish.TwitterMultiUserSingleTweetContainer {
+ position: absolute;
+ top: 660px;
+ left: 10px;
+}
+
+/* END custom layout for TwitterMultiUserSingleTweet */
+
+/* BEGIN custom layout for TwitterSingleUserMultiTweet */
+#TTCnotices.TwitterSingleUserMultiTweetContainer {
+ position: absolute;
+ top: 770px;
+ left: 10px;
+}
+
+/* END custom layout for TwitterSingleUserMultiTweet */
+
+/* BEGIN custom layout for UtilityAppFiguresSales */
+#TypeLess.UtilityAppFiguresSalesContainer {
+ position: absolute;
+ top: 370px;
+ left: 1200px;
+}
+
+#IMMK.UtilityAppFiguresSalesContainer {
+ position: absolute;
+ top: 440px;
+ left: 1200px;
+}
+
+/* END custom layout for UtilityAppFiguresSales */
+
+/* BEGIN custom layout for TwitterTrendingTopics */
+#torontoTrending.TwitterTrendingTopicsContainer {
+ position: absolute;
+ top: 550px;
+ left: 1300px;
+}
+
+/* END custom layout for TwitterTrendingTopics */
+
+/* BEGIN custom layout for UtilityCountDown */
+#WwdcUtilityCountDown {
+ position: absolute;
+ top: 250px;
+ left: 1285px;
+}
+
+/* END custom layout for UtilityCountDown */

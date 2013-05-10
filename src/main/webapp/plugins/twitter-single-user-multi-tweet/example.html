@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>twitter-single-user-multi-tweet</title>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=UTF-8" />
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes" />
+
+
+<!--                            -->
+<!-- BEGIN Example boiler plate -->
+<!--                            -->
+
+<script
+  type="text/javascript"
+  src="../../js/jquery-1.9.1.min.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="../../css/demo-style.css" />
+
+<style>
+div#fullScreen {
+ background-color: #000000;
+ height: 100%;
+ width: 100%;
+}
+</style>
+
+
+<!--                          -->
+<!-- END Example boiler plate -->
+<!--                          -->
+
+
+<!-- BEGIN twitter-single-user-multi-tweet Plugin -->
+
+<script
+  type="text/javascript"
+  src="./js/twitter-single-user-multi-tweet.js"></script>
+
+<script type="text/javascript">
+  var ttcNoticesTwitterSingleUserMultiTweet = new TwitterSingleUserMultiTweet( 'TTCnotices', 270000, 'TTCnotices' );
+  
+  var ttcNoticesTwitterSingleUserMultiTweetDocumentReady = function() {
+
+    ttcNoticesTwitterSingleUserMultiTweet.update();
+    ttcNoticesTwitterSingleUserMultiTweet.startUpdates();
+  }
+</script>
+
+<!-- END twitter-single-user-multi-tweet Plugin -->
+
+
+<style>
+#TTCnotices {
+ position: absolute;
+ top: 10px;
+ left: 20px;
+ width: 1200px;
+ height: 420px;
+}
+</style>
+
+
+<script type="text/javascript">
+  $( document ).ready( function() {
+
+    ttcNoticesTwitterSingleUserMultiTweetDocumentReady();
+    
+  } );
+</script>
+
+
+</head>
+
+<body>
+  <div id="fullScreen">
+
+    <div
+      id="TTCnotices"
+      class="TwitterSingleUserMultiTweetContainer">
+      <div class="TwitterSingleUserMultiTweet"></div>
+    </div>
+
+  </div>
+</body>
+</html>

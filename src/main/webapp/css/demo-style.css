@@ -1,0 +1,22 @@
+
+/* BEGIN Core  */
+body {
+ background-color: darkGray;
+ margin: 0px;
+}
+
+@font-face {
+ font-family: 'OpenSans-Bold';
+ src: url('../resources/OpenSans-Bold.ttf');
+}
+
+body {
+ font-family: OpenSans-Bold;
+}
+
+div.roundedCorners {
+ padding: 20px;
+ -webkit-border-radius: 24px;
+}
+
+/* END Core  */

@@ -1,0 +1,29 @@
+/* BEGIN TwitterMultiUserSingleTweet */
+.TwitterMultiUserSingleTweetContainer {
+	width: 1200px;
+	height: 72px;
+	border-radius: 5px;
+	/* background-color: #232526; */
+  /* background-image: -webkit-linear-gradient(top, #36393B 0%, #232526 100%); */
+  background: -webkit-linear-gradient(top, rgb(54,57,59) 0%, rgb(35,37, 38) 100%);
+	color: rgb(170, 170, 170);
+}
+
+.TwitterMultiUserSingleTweet {
+	font-size: 25px;
+}
+
+.TwitterMultiUserSingleTweet div.TwitterMultiUserSingleTweetImage {
+	/* Twitter icon images are 48px x 48px */
+	margin: 10px;
+	float: left;
+	height: 48px;
+	width: 48px;
+}
+
+.TwitterMultiUserSingleTweet div.TwitterMultiUserSingleTweetTweet {
+	margin-left: 80px;
+	width: 1100px;
+}
+
+/* END TwitterMultiUserSingleTweet */
