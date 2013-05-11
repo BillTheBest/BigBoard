@@ -150,9 +150,9 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.1</version>
         <configuration>
-          <username>root</username>
-          <password></password>
-          <url>http://localhost:8080/manager/html</url>
+          <username>${tomcat-username}</username>
+          <password>${tomcat-password}</password>
+          <url>${tomcat-url}</url>
         </configuration>
       </plugin>
 
@@ -263,5 +263,19 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
+  <profiles>
+    <profile>
+        <id>localhost</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <tomcat-username>root</tomcat-username>
+            <tomcat-password>Seekrit</tomcat-password>
+            <tomcat-url>http://localhost:8080/manager/html</tomcat-url>
+        </properties>
+    </profile>
+  </profiles>
 
 </project>

@@ -91,8 +91,7 @@ WeatherEnvironmentCanada.prototype.receivedData = function( data ) {
   
   var weatherUrl = this.translateCondition( data.condition );
   
-  $( "#" + this.id + " .WeatherEnvironmentCanada .icon" ).css( 'background-image',
-      'url(' + weatherUrl + ')' );
+  $( "#" + this.id + " .WeatherEnvironmentCanada .icon" ).css( 'background-image', 'url(' + weatherUrl + ')' );
 }
 
 
@@ -101,14 +100,14 @@ WeatherEnvironmentCanada.prototype.receivedData = function( data ) {
  */
 
 
-  /**
-   * Translates the condition to a weather icon background-image url.
-   * 
-   * @param {String}
-   *          condition
-   * 
-   * @return {String} Image asset path
-   */
+/**
+ * Translates the condition to a weather icon background-image url.
+ * 
+ * @param {String}
+ *          condition
+ * 
+ * @return {String} Image asset path
+ */
 WeatherEnvironmentCanada.prototype.translateCondition = function( condition ) {
 
   condition = condition.trim();
@@ -222,7 +221,7 @@ WeatherEnvironmentCanada.prototype.translateCondition = function( condition ) {
   if( condition == "Rain" || condition == "Light Rain" || condition == "Light Rainshower"
       || condition == "Light Drizzle" || condition == "Thunderstorm with light rainshowers"
       || condition == "Thunderstorm with rainshowers" || condition == "Thunderstorm with heavy rainshowers"
-      || condition == "Thunderstorm" ) {
+      || condition == "Thunderstorm" || condition == "Heavy Rainshower" || condition == "Rainshower" ) {
     
     if( this.isDayTime() ) {
       
