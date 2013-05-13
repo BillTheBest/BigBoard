@@ -22,8 +22,7 @@ function WeatherArduinoWebServerTemperatureSensor( id, interval, url ) {
   this.intervalId = 0;
   
   // Path details
-  this.pathname = window.location.pathname;
-  this.applicationPath = this.pathname.substring( 0, this.pathname.lastIndexOf( 'plugins' ) );
+  this.applicationPath = "/BigBoard/"
   this.pluginPath = this.applicationPath + "plugins/weather-arduino-web-server-temperature-sensor";
   
   // Adding css for plugin to page.

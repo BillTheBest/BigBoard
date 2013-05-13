@@ -1,0 +1,126 @@
+{
+    "data": [
+        {
+            "date": "2013-05-12 20:37", 
+            "episode": 20, 
+            "provider": "DIMENSION", 
+            "quality": "HD TV", 
+            "resource": "The.Simpsons.S24E20.720p.HDTV.X264-DIMENSION.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/The.Simpsons.S24E20.720p.HDTV.X264-DIMENSION", 
+            "season": 24, 
+            "show_name": "The Simpsons", 
+            "status": "Downloaded", 
+            "tvdbid": 71663
+        }, 
+        {
+            "date": "2013-05-12 19:36", 
+            "episode": 20, 
+            "provider": "DIMENSION", 
+            "quality": "HD TV", 
+            "resource": "Family.Guy.S11E20.720p.HDTV.X264-DIMENSION.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/Family.Guy.S11E20.720p.HDTV.X264-DIMENSION", 
+            "season": 11, 
+            "show_name": "Family Guy", 
+            "status": "Downloaded", 
+            "tvdbid": 75978
+        }, 
+        {
+            "date": "2013-05-09 20:45", 
+            "episode": 13, 
+            "provider": "DIMENSION.nzb", 
+            "quality": "HD TV", 
+            "resource": "Community.S04E13.720p.HDTV.X264-DIMENSION.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/Community.S04E13.720p.HDTV.X264-DIMENSION.nzb", 
+            "season": 4, 
+            "show_name": "Community", 
+            "status": "Downloaded", 
+            "tvdbid": 94571
+        }, 
+        {
+            "date": "2013-05-09 20:42", 
+            "episode": 22, 
+            "provider": "DIMENSION", 
+            "quality": "HD TV", 
+            "resource": "Elementary.S01E22.720p.HDTV.X264-DIMENSION.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/Elementary.S01E22.720p.HDTV.X264-DIMENSION", 
+            "season": 1, 
+            "show_name": "Elementary", 
+            "status": "Downloaded", 
+            "tvdbid": 255316
+        }, 
+        {
+            "date": "2013-05-09 19:45", 
+            "episode": 12, 
+            "provider": "BAJSKORV", 
+            "quality": "HD TV", 
+            "resource": "nature.s31e12.720p.hdtv.x264-bajskorv.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/Nature.S31E12.720p.HDTV.x264-BAJSKORV", 
+            "season": 31, 
+            "show_name": "Nature", 
+            "status": "Downloaded", 
+            "tvdbid": 81157
+        }, 
+        {
+            "date": "2013-05-08 22:44", 
+            "episode": 2, 
+            "provider": "DHD", 
+            "quality": "HD TV", 
+            "resource": "MythBusters.S12E02.Deadliest.Catch.Crabtastic.Special.720p.HDTV.x264-DHD.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/MythBusters.S12E02.Deadliest.Catch.Crabtastic.Special.720p.HDTV.x264-DHD", 
+            "season": 12, 
+            "show_name": "MythBusters", 
+            "status": "Downloaded", 
+            "tvdbid": 73388
+        }, 
+        {
+            "date": "2013-05-08 20:41", 
+            "episode": 21, 
+            "provider": "DIMENSION", 
+            "quality": "HD TV", 
+            "resource": "CSI.S13E21.720p.HDTV.X264-DIMENSION.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/CSI.S13E21.720p.HDTV.X264-DIMENSION", 
+            "season": 13, 
+            "show_name": "CSI: Crime Scene Investigation", 
+            "status": "Downloaded", 
+            "tvdbid": 72546
+        }, 
+        {
+            "date": "2013-05-06 00:42", 
+            "episode": 4, 
+            "provider": "2HD", 
+            "quality": "HD TV", 
+            "resource": "anthony.bourdain.parts.unknown.s01e04.720p.hdtv.x264-2hd.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/Anthony.Bourdain.Parts.Unknown.S01E04.720p.HDTV.x264-2HD", 
+            "season": 1, 
+            "show_name": "Anthony Bourdain: Parts Unknown", 
+            "status": "Downloaded", 
+            "tvdbid": 264108
+        }, 
+        {
+            "date": "2013-05-05 22:56", 
+            "episode": 11, 
+            "provider": "DIMENSION", 
+            "quality": "HD TV", 
+            "resource": "The.Amazing.Race.S22E11E12.720p.HDTV.X264-DIMENSION.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/The.Amazing.Race.S22E11E12.720p.HDTV.X264-DIMENSION", 
+            "season": 22, 
+            "show_name": "The Amazing Race", 
+            "status": "Downloaded", 
+            "tvdbid": 77666
+        }, 
+        {
+            "date": "2013-05-05 20:36", 
+            "episode": 19, 
+            "provider": "DIMENSION", 
+            "quality": "HD TV", 
+            "resource": "The.Simpsons.S24E19.720p.HDTV.X264-DIMENSION.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/The.Simpsons.S24E19.720p.HDTV.X264-DIMENSION", 
+            "season": 24, 
+            "show_name": "The Simpsons", 
+            "status": "Downloaded", 
+            "tvdbid": 71663
+        }
+    ], 
+    "message": "", 
+    "result": "success"
+}

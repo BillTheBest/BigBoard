@@ -23,8 +23,7 @@ function WeatherEnvironmentCanada( id, interval, locationCode ) {
   this.intervalId = 0;
   
   // Path details
-  this.pathname = window.location.pathname;
-  this.applicationPath = this.pathname.substring( 0, this.pathname.lastIndexOf( 'plugins' ) );
+  this.applicationPath = "/BigBoard/"
   this.pluginPath = this.applicationPath + "plugins/weather-environment-canada";
   
   // Adding css for plugin to page.

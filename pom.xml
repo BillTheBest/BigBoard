@@ -150,6 +150,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.1</version>
         <configuration>
+          <contextFile>${basedir}/src/main/webapp/META-INF/context.xml</contextFile>
           <username>${tomcat-username}</username>
           <password>${tomcat-password}</password>
           <url>${tomcat-url}</url>
