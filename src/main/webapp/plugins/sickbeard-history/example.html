@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>sickbeard-history</title>
+<meta
+  http-equiv="content-type"
+  content="text/html; charset=UTF-8" />
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes" />
+
+
+<!--                          -->
+<!-- BEGIN Example -->
+<!--                          -->
+
+<script
+  type="text/javascript"
+  src="../../js/jquery-1.9.1.min.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="../../demo/css/style.css" />
+
+<style>
+div#fullScreen {
+ background-color: #000000;
+ height: 100%;
+ width: 100%;
+}
+</style>
+
+
+<!--                          -->
+<!-- END Example boiler plate -->
+<!--                          -->
+
+
+<!-- BEGIN sickbeard-history Plugin -->
+
+<script
+  type="text/javascript"
+  src="./js/sickbeard-history.js"></script>
+
+<script type="text/javascript">
+
+  <!-- NOTE: Change HOSTNAME and XXXX to match your SickBeard instance. -->
+
+  var sickbeardHistoryInstance = new SickbeardHistory( 'sickbeardHistoryInstance', 10000, 30000, 10, 'http://HOSTNAME:8081/api/XXXX/' );
+  
+  var sickbeardHistoryInstanceDocumentReady = function() {
+    
+    sickbeardHistoryInstance.update();
+    sickbeardHistoryInstance.startUpdates();
+  }
+</script>
+
+<!-- END sickbeard-history Plugin -->
+
+
+<style>
+/* Layout */
+#sickbeardHistoryInstance {
+ position: absolute;
+ top: 100px;
+ left: 100px;
+}
+</style>
+
+
+<script type="text/javascript">
+  $( document ).ready( function() {
+
+    sickbeardHistoryInstanceDocumentReady();
+    
+  } );
+</script>
+
+
+</head>
+
+<body>
+  <div id="fullScreen">
+
+    <div
+      id="sickbeardHistoryInstance"
+      class="SickbeardHistoryContainer">
+      <div id="logo" ></div>
+     <div
+      class="SickbeardHistory">&nbsp;</div>
+      <div class="title">
+      SickBeard History</div>
+    </div>
+
+    <div style=" position: absolute; top: 200px; left: 100px; color: white;">Note: urlPrefix must be set for the example to work.</div>
+
+  </div>
+</body>
+</html>

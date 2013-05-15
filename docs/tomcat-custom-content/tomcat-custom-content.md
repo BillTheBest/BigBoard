@@ -14,12 +14,11 @@ Implementation - Environment Variable Tomcat
 --------------------------------------------
 
 - Used by app.
-- Edit startup.sh or startup.bat and dd the following lines at the first blank line in the file:
+- Edit startup.sh or startup.bat and add the following lines at the first blank line in the file:
 ...
 # BEGIN ADDED
-echo "Setting Tally key store JAVA_OPTS values"
-export JAVA_OPTS="$JAVA_OPTS \
--DCUSTOM_HOME=\"/var/www/big-board-custom\" 
+echo "Setting CUSTOM_HOME JAVA_OPTS values"
+export JAVA_OPTS="$JAVA_OPTS -DCUSTOM_HOME=\"/var/www/big-board-custom\""
 # END ADDED
 ...
 

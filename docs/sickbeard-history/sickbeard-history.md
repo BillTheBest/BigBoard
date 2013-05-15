@@ -2,42 +2,52 @@ Sickbeard history
 =================
 
 - Query SickBeard instance to get history.
+
+- Must set hostname, port and API key in the urlPrefix.
+
+Notes
+-----
+
 - Request:
 
-    http://media:8081/api/XXXX/?cmd=history&limit=10&type=downloaded
+    http://SickBeard:8081/api/XXXX/?cmd=history&limit=2&type=downloaded&callback=?
+
+  - SickBeard is the hostname
+  - 8081 is the port
+  - XXXX is API key
 
 - Response:
 
-{
+?({
     "data": [
         {
-            "date": "2011-08-19 12:58", 
-            "episode": 4, 
-            "provider": "-1", 
-            "quality": "SD TV", 
-            "resource": "project.runway.s09e04.all.about.nina.hdtv.xvid-crimson.avi", 
-            "resource_path": "C:\\Users\\sickbeard\\Documents\\downloads\\complete\\TV\\Project.Runway.S09E04.All.About.Nina.HDTV.XviD-CRiMSON", 
-            "season": 9, 
-            "show_name": "Project Runway", 
+            "date": "2013-05-13 15:43", 
+            "episode": 5, 
+            "provider": "2HD.nzb", 
+            "quality": "HD TV", 
+            "resource": "anthony.bourdain.parts.unknown.s01e05.720p.hdtv.x264-2hd.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/Anthony.Bourdain.Parts.Unknown.S01E05.720p.HDTV.x264-2HD.nzb", 
+            "season": 1, 
+            "show_name": "Anthony Bourdain: Parts Unknown", 
             "status": "Downloaded", 
-            "tvdbid": 74285
+            "tvdbid": 264108
         }, 
         {
-            "date": "2011-08-19 12:25", 
-            "episode": 4, 
-            "provider": "NZBs.org", 
-            "quality": "SD TV", 
-            "resource": "Project.Runway.S09E04.All.About.Nina.HDTV.XviD-CRiMSON", 
-            "resource_path": "", 
-            "season": 9, 
-            "show_name": "Project Runway", 
-            "status": "Snatched", 
-            "tvdbid": 74285
+            "date": "2013-05-12 20:37", 
+            "episode": 20, 
+            "provider": "DIMENSION", 
+            "quality": "HD TV", 
+            "resource": "The.Simpsons.S24E20.720p.HDTV.X264-DIMENSION.mkv", 
+            "resource_path": "/media/data/sabnzbd/downloads-complete/The.Simpsons.S24E20.720p.HDTV.X264-DIMENSION", 
+            "season": 24, 
+            "show_name": "The Simpsons", 
+            "status": "Downloaded", 
+            "tvdbid": 71663
         }
     ], 
     "message": "", 
     "result": "success"
-}
+});
 
 - Reference:
 
