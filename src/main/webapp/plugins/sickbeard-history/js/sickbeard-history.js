@@ -105,18 +105,4 @@ SickbeardHistory.prototype.receivedData = function( data ) {
         $( "#" + thisId + " .SickbeardHistory" ).html( html );
         $( "#" + thisId + " .SickbeardHistory" ).fadeIn();
       } );
-  
-//  $( "#" + this.id + " .TwitterSingleUserMultiTweet" ).animate(
-//      {
-//        opacity : 0.0
-//      },
-//      1500,
-//      $.proxy(  function() {
-//        
-//        $( "#" + thisId + " .SickbeardHistory" ).html( html );
-//        $( "#" + thisId + " .SickbeardHistory" ).slideUp( 0 );
-//        $( "#" + thisId + " .SickbeardHistory" ).css( "opacity", "1.0" );
-//        $( "#" + thisId + " .SickbeardHistory" ).slideDown( 300 );
-//        
-//      } ) );
 }
