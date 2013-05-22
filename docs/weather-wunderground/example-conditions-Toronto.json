@@ -1,0 +1,92 @@
+
+{
+	"response": {
+		"version": "0.1"
+		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"
+		,"features": {
+		"conditions": 1
+		}
+	}
+		,	"current_observation": {
+		"image": {
+		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Toronto, Ontario",
+		"city":"Toronto",
+		"state":"ON",
+		"state_name":"Ontario",
+		"country":"CA",
+		"country_iso3166":"CA",
+		"zip":"00000",
+		"latitude":"43.63000107",
+		"longitude":"-79.40000153",
+		"elevation":"77.00000000"
+		},
+		"observation_location": {
+		"full":"Toronto, ",
+		"city":"Toronto",
+		"state":"",
+		"country":"CA",
+		"country_iso3166":"CA",
+		"latitude":"43.63000107",
+		"longitude":"-79.40000153",
+		"elevation":"253 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"CYTZ",
+		"observation_time":"Last Updated on May 22, 9:00 AM EDT",
+		"observation_time_rfc822":"Wed, 22 May 2013 09:00:00 -0400",
+		"observation_epoch":"1369227600",
+		"local_time_rfc822":"Wed, 22 May 2013 09:20:52 -0400",
+		"local_epoch":"1369228852",
+		"local_tz_short":"EDT",
+		"local_tz_long":"America/Montreal",
+		"local_tz_offset":"-0400",
+		"weather":"Mostly Cloudy",
+		"temperature_string":"57 F (14 C)",
+		"temp_f":57,
+		"temp_c":14,
+		"relative_humidity":"88%",
+		"wind_string":"From the ENE at 6 MPH",
+		"wind_dir":"ENE",
+		"wind_degrees":60,
+		"wind_mph":6,
+		"wind_gust_mph":0,
+		"wind_kph":9,
+		"wind_gust_kph":0,
+		"pressure_mb":"1009",
+		"pressure_in":"29.79",
+		"pressure_trend":"-",
+		"dewpoint_string":"54 F (12 C)",
+		"dewpoint_f":54,
+		"dewpoint_c":12,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"57 F (14 C)",
+		"feelslike_f":"57",
+		"feelslike_c":"14",
+		"visibility_mi":"9.0",
+		"visibility_km":"14.5",
+		"solarradiation":"",
+		"UV":"2",
+		"precip_1hr_string":"-9999.00 in (-9999.00 mm)",
+		"precip_1hr_in":"-9999.00",
+		"precip_1hr_metric":"-9999.00",
+		"precip_today_string":"0.00 in (0.0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0.0",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons-ak.wxug.com/i/c/k/mostlycloudy.gif",
+		"forecast_url":"http://www.wunderground.com/global/stations/71265.html",
+		"history_url":"http://www.wunderground.com/history/airport/CYTZ/2013/5/22/DailyHistory.html",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=43.63000107,-79.40000153"
+	}
+}
