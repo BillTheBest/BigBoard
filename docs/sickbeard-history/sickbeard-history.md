@@ -1,9 +1,12 @@
 Sickbeard history
 =================
 
-- Query SickBeard instance to get history.
+Configuration
+-------------
 
-- Must set hostname, port and API key in the urlPrefix.
+- Query SickBeard instance to get history.
+- Must configure urlPrefix to set hostname, port, and API key.
+
 
 Notes
 -----
