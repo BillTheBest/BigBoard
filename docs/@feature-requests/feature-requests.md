@@ -20,6 +20,8 @@ Requests
 
  - Server ping
    - node.js, http://qawemlilo.rflab.co.za/?p=458
+   
+- iTunes currently playing
 
 
 Preliminary Analysis Done
