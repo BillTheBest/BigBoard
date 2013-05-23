@@ -61,7 +61,7 @@ export JAVA_OPTS="$JAVA_OPTS -DCUSTOM_HOME=\"/var/www/big-board-custom\""
 # END ADDED
 ...
 
-  - **"/var/www/big-board-custom\"** is the directory for custom content.
+  - **/var/www/big-board-custom** is the directory for custom content.
   
 - Start Tomcat.
 - Copy the war file to the `webapps` folder, BigBoard should be deployed automatically.

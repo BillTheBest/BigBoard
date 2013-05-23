@@ -8,10 +8,9 @@
  *          id - Id of the div to target for html replacement.
  * @param {int}
  *          interval - How often to run update() to refresh the content
- *
- *          NOTE: This is limited by Wunderground account level.
- *                Please see: http://www.wunderground.com/weather/api/
- *
+ * 
+ * NOTE: This is limited by Wunderground account level. Please see: http://www.wunderground.com/weather/api/
+ * 
  * @param {string}
  *          apiKey - 16 character Wunderground API Key, eg '3c7ef32158d75bc9'.
  * @param {string}
@@ -71,7 +70,7 @@ WeatherWunderground.prototype.update = function() {
 
   console.log( 'update called' );
   
-  $.getJSON( this.urlPrefix + '?cmd=history&limit=10&type=downloaded&callback=?', $.proxy( this.receivedData, this ) );
+  $.getJSON( 'http://api.wunderground.com/api/' + this.apiKey + '/conditions/q' + this.query + '?callback=?', $.proxy( this.receivedData, this ) );
 }
 
 
@@ -82,22 +81,32 @@ WeatherWunderground.prototype.receivedData = function( data ) {
 
   console.log( 'receivedData called' );
   
-  var html = data.data[ this.historyCountCurrent ].show_name;
+  console.log('station_id: ' + data.current_observation.station_id);
+  console.log('observation_time: ' + data.current_observation.observation_time);
+  console.log('weather: ' + data.current_observation.weather);
+  console.log('temp_c: ' + data.current_observation.temp_c);
+  console.log('relative_humidity: ' + data.current_observation.relative_humidity);
+  console.log('wind_dir: ' + data.current_observation.wind_dir);
+  console.log('wind_kph: ' + data.current_observation.wind_kph);
+  console.log('wind_gust_kph: ' + data.current_observation.wind_gust_kph);
+  console.log('feelslike_c: ' + data.current_observation.feelslike_c);
+  console.log('precip_today_metric: ' + data.current_observation.precip_today_metric);
+
+  var html = '';
+  var html = html + '<div id="station_id">' + data.current_observation.station_id + '</div>';
+  var html = html + '<div id="observation_time">' + data.current_observation.observation_time + '</div>';
+  var html = html + '<div id="weather">' + data.current_observation.weather + '</div>';
+  var html = html + '<div id="temp_c">' + data.current_observation.temp_c + '</div>';
+  var html = html + '<div id="relative_humidity">' + data.current_observation.relative_humidity + '</div>';
+  var html = html + '<div id="wind_dir">' + data.current_observation.wind_dir + '</div>';
+  var html = html + '<div id="wind_kph">' + data.current_observation.wind_kph + '</div>';
+  var html = html + '<div id="wind_gust_kph">' + data.current_observation.wind_gust_kph + '</div>';
+  var html = html + '<div id="feelslike_c">' + data.current_observation.feelslike_c + '</div>';
+  var html = html + '<div id="precip_today_metric">' + data.current_observation.precip_today_metric + '</div>';
+  
   var thisId = this.id;
   
   console.log('html: ' + html);
-  
-  //
-  if( this.historyCountCurrent == ( this.historyCountMax - 1) )
-  {
-    console.log('Resetting historyCountCurrent to 0');
-    this.historyCountCurrent = 0;
-  }
-  else
-  {
-    this.historyCountCurrent = this.historyCountCurrent + 1;
-    console.log('bumping historyCountCurrent to ' + this.historyCountCurrent );
-  }
   
   $( "#" + thisId + " .WeatherWunderground" ).fadeOut(
 

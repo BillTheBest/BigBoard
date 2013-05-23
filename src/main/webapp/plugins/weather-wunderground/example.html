@@ -45,9 +45,18 @@ div#fullScreen {
 
 <script type="text/javascript">
 
-  <!-- NOTE: Change TORONTO to match your city -->
+  <!-- NOTE: Configure interval, apiKey and query.                   -->
+  <!--                                                               -->
+  <!-- Create an account at http://www.wunderground.com/weather/api/ -->
+  <!--                                                               -->
+  <!-- Your account type will dictate the refresh interval.          -->
+  <!--                                                               -->
+  <!-- example interval, 10 min: 600000                              -->
+  <!-- example api key: 3c7ef32158d75ba8                             -->
+  <!-- example query:  '/Canada/Toronto.json'                        -->
+  <!--                                                               -->
 
-  var weatherWundergroundInstance = new weatherWunderground( 'weatherWundergroundInstance', 10000, 30000, 10, 'http://HOSTNAME:8081/api/XXXX/' );
+  var weatherWundergroundInstance = new WeatherWunderground( 'weatherWundergroundInstance', 20000, '3c7ef32158d75ba8', '/Canada/Toronto.json' );
   
   var weatherWundergroundInstanceDocumentReady = function() {
     
@@ -86,14 +95,12 @@ div#fullScreen {
     <div
       id="weatherWundergroundInstance"
       class="WeatherWundergroundContainer">
-      <div id="logo" ></div>
-     <div
-      class="WeatherWunderground">&nbsp;</div>
-      <div class="title">
-      SickBeard History</div>
+      <div id="logo"></div>
+      <div class="WeatherWunderground">&nbsp;</div>
     </div>
 
-    <div style=" position: absolute; top: 200px; left: 100px; color: white;">Note: urlPrefix must be set for the example to work.</div>
+    <div style="position: absolute; top: 550px; left: 100px; color: white;">Note: api key must be set for the
+      example to work.</div>
 
   </div>
 </body>

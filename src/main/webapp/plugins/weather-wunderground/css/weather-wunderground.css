@@ -1,28 +1,15 @@
-/* BEGIN ReferencePlugin */
-.SickbeardHistoryContainer {
+/* BEGIN WeatherWunderground */
+.WeatherWundergroundContainer {
  width: 750px;
- height: 65px;
+ height: 430px;
  color: rgb(170, 170, 170);
  /* Used to determine boundary for layout. */
- /* border: white solid 1px; */
+ border: white solid 1px;
 }
 
-.SickbeardHistoryContainer #logo { 
- height: 65px;
- width: 136px;
- float: left;
- background-image:url('../images/logo.png');
- background-size: 100%;
-}
-
-.SickbeardHistoryContainer .title { 
- margin: 0 auto 0 150px;
- color: rgb(90, 90, 90);
-}
-
-.SickbeardHistory {
+.WeatherWunderground {
  margin: 0 auto 0 150px;
  font-size: 30px;
 }
 
-/* END ReferencePlugin */
+/* END WeatherWunderground */
