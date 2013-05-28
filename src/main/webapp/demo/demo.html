@@ -26,23 +26,23 @@
 
 
 
-<!-- BEGIN weather-environment-canada Plugin -->
+<!-- BEGIN weather-wunderground Plugin -->
 
 <script
   type="text/javascript"
-  src="../plugins/weather-environment-canada/js/weather-environment-canada.js"></script>
+  src="../plugins/weather-wunderground/js/weather-wunderground.js"></script>
 
 <script type="text/javascript">
-  var torontoWeatherEnvironmentCanada = new WeatherEnvironmentCanada( 'torontoWeather', 120000, 'on-143_e' );
+  var torontoWeatherWunderground = new WeatherWunderground( 'torontoWeather', 20000, '3c7ef32158d75ba8', '/Canada/Toronto.json' );
   
-  var torontoWeatherEnvironmentCanadaDocumentReady = function() {
+  var torontoWeatherWundergroundDocumentReady = function() {
 
-    torontoWeatherEnvironmentCanada.update();
-    torontoWeatherEnvironmentCanada.startUpdates();
+    torontoWeatherWunderground.update();
+    torontoWeatherWunderground.startUpdates();
   }
 </script>
 
-<!-- END weather-environment-canada Plugin -->
+<!-- END weather-wunderground Plugin -->
 
 
 <!-- BEGIN weather-arduino-web-server-temperature-sensor Plugin -->
@@ -209,7 +209,7 @@
 <script type="text/javascript">
   $( document ).ready( function() {
 
-    torontoWeatherEnvironmentCanadaDocumentReady();
+    torontoWeatherWundergroundDocumentReady();
     localWeatherThermometerDocumentReady();
     torontoUtilityTimeDateDocumentReady();
     typeLessUtilityAppFiguresSalesDocumentReady();
@@ -243,8 +243,8 @@
 
     <div
       id="torontoWeather"
-      class="WeatherEnvironmentCanadaContainer">
-      <div class="WeatherEnvironmentCanada"></div>
+      class="WeatherWundergroundContainer">
+      <div class="WeatherWunderground"></div>
     </div>
 
 

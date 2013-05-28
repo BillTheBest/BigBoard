@@ -66,12 +66,6 @@
   </bean>
 
 
-  <bean id="weatherEnvironmentCanada"
-    class="ca.gordonturner.bigboard.web.weather.WeatherEnvironmentCanada"
-    init-method="init">
-  </bean>
-
-
   <bean id="utilityAppFiguresSales"
     class="ca.gordonturner.bigboard.web.utility.UtilityAppFiguresSales"
     init-method="init">

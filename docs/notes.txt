@@ -1,55 +1,59 @@
-BigBoard-notes
-========================================================================================================================
-
-
-W 41 km/h gust 59 km/h
-Persons in or near this area should be on the lookout for adverse weather conditions and take necessary safety precautions. Issued: 09:26 AM EST Sunday 20 January 2013
-Updated Sun 10:00 AM
-
+notes
+=====
 
 Background Color and Gradients
-------------------------------------------------------------------------------------------------------------------------
+------------------------------
+
 - Medium gray, top left             #232526
 - Medium dark gray, bottom right    #1f2122
 
 
 Server Uptime
-------------------------------------------------------------------------------------------------------------------------
+-------------
 
-new Scanner(new FileInputStream("/proc/uptime")).next();
+- Java:
 
-// Output 350735.47 234388.90
-// First number total number of seconds the system has been up
-// Second number is how much of that time the machine has spent idle
+    new Scanner(new FileInputStream("/proc/uptime")).next();
 
-http://stackoverflow.com/questions/8209096/how-to-get-unix-uptime-in-java
+    // Output 350735.47 234388.90
+    // First number total number of seconds the system has been up
+    // Second number is how much of that time the machine has spent idle
+
+    http://stackoverflow.com/questions/8209096/how-to-get-unix-uptime-in-java
 
 
 
 Inspiration
-------------------------------------------------------------------------------------------------------------------------
-http://www.geckoboard.com/
-https://demo.geckoboard.com/dashboard/D66E964F5F044B85
+-----------
 
-http://ducksboard.com/
+- Dashboards:
 
-https://www.leftronic.com/
+    http://www.geckoboard.com/
+    https://demo.geckoboard.com/dashboard/D66E964F5F044B85
+    https://metrics.librato.com/
+    http://ducksboard.com/
 
-http://shopify.github.com/dashing/
+    https://www.leftronic.com/
 
-http://techcrunch.com/2011/04/29/jack-dorsey-shares-some-big-square-numbers-341688-readers-shipped-137m-total-flow/
-http://www.dundas.com/dashboard/online-examples/screenshots/Wind-and-Solar-Dashboard.aspx
+    http://shopify.github.com/dashing/
 
+- Articles:
 
+    http://techcrunch.com/2011/04/29/jack-dorsey-shares-some-big-square-numbers-341688-readers-shipped-137m-total-flow/
+    http://www.dundas.com/dashboard/online-examples/screenshots/Wind-and-Solar-Dashboard.aspx
+    http://www.jebriggs.com/blog/2010/09/business-ambient-displays/
 
-http://www.jebriggs.com/blog/2010/09/business-ambient-displays/
+- Monitoring:
+    
+    http://demo.munin-monitoring.org/
+    http://www.haque.co.uk/pachube.php
 
-http://chartbeat.com/
+- Graphing:
+    
+    http://www.humblesoftware.com/flotr2/documentation
+    
+- Data:
 
-
-
-Misc
-------------------------------------------------------------------------------------------------------------------------
-- Alternate fonts:
-font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
-font-family : 'Helvetica Neue',Arial,Helvetica
+    http://couchdb.apache.org/
+    https://tempo-db.com/
+    

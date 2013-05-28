@@ -61,10 +61,7 @@ WeatherArduinoWebServerTemperatureSensor.prototype.update = function() {
 
   console.log( 'update called' );
   
-  $.getJSON( this.applicationPath + "service/WeatherArduinoWebServerTemperatureSensor.html", {
-    id : this.id,
-    url : this.url
-  }, $.proxy( this.receivedData, this ) );
+  $.getJSON( this.url + '?format=JSONP&callback=?', $.proxy( this.receivedData, this ) );
 }
 
 
@@ -75,7 +72,7 @@ WeatherArduinoWebServerTemperatureSensor.prototype.receivedData = function( data
 
   console.log( 'receivedData called' );
   
-  var html = "<div class='temperature'>" + data.temperature + "</div>";
+  var html = "<div class='temperature'>" + data.temperature.celcius.toFixed(1) + "&deg;C</div>";
   
-  $( "#" + data.id + " .WeatherArduinoWebServerTemperatureSensor" ).html( html );
+  $( "#" + this.id + " .WeatherArduinoWebServerTemperatureSensor" ).html( html );
 }
