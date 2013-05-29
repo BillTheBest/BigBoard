@@ -92,9 +92,20 @@ WeatherWunderground.prototype.receivedData = function( data ) {
   // console.log( 'feelslike_c: ' + data.current_observation.feelslike_c );
   // console.log( 'precip_today_metric: ' + data.current_observation.precip_today_metric );
   
-  var html = "<div class='icon'></div>" + "<div class='highlights'>" + "<div class='temperature'>"
-      + data.current_observation.temp_c.toFixed(1) + "&deg;C</div>" + "<div class='condition'>" + data.current_observation.weather
-      + "</div>" + "</div>" + "<div class='details'>" + "<div class='wind'>" + data.current_observation.wind_dir + " "
+  var html = "<div class='conditionIcon'>" + 
+    
+    "<div class='icon'></div>" +
+    "<div class='condition'>" + data.current_observation.weather + "</div>" +
+    
+  "</div>" + 
+  
+  "<div class='highlights'>" + 
+    "<div class='temperature'>" + data.current_observation.temp_c.toFixed(1) + "&deg;C</div>" + 
+    "<div class='city'>" + data.current_observation.display_location.city + "</div>" + 
+  "</div>" +
+      
+      
+      "<div class='details'>" + "<div class='wind'>" + data.current_observation.wind_dir + " "
       + data.current_observation.wind_kph + " km/h gust " + data.current_observation.wind_gust_kph + " km/h</div>"
       + "<div class='description'>" + data.current_observation.relative_humidity + " humidity</div>" + "<div class='date'>"
       + data.current_observation.observation_time + "</div>" + "</div>";
@@ -233,7 +244,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Fog" ) {
+  if( condition == "Fog" || condition == "Mist" ) {
     
     return this.pluginPath + "/images/fog.svg";
   }

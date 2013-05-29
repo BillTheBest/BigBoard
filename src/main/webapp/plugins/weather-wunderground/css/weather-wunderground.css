@@ -12,39 +12,54 @@
   margin-top: 5px;
 }
 
-/* Icon */
+/* conditionIcon */
+
+.WeatherWunderground .conditionIcon {
+  float: left;
+  width: 145px;
+  height: 160px;
+}
+
 .WeatherWunderground .icon {
   float: left;
-  width: 150px;
+  width: 145px;
   height: 100px;
-  margin: 10px; background-size : 100px 100px;
+  margin: 0px 0px 0px 0px; 
+  background-size : 100px 100px;
   background-image: url('../images/caution.svg');
   background-size: 150px 100px;
 }
 
-/* Highlights */
-.WeatherWunderground .highlights {
-  float: left;
-  width: 280px;
-}
-
-.WeatherWunderground .temperature {
-  width: 280px;
-  font-size: 70px;
-  text-align: center;
-}
-
 .WeatherWunderground .condition {
-  width: 280px;
+  width: 145px;
+  height: 50px;
   font-size: 25px;
   text-align: center;
 }
 
+
+/* Highlights */
+.WeatherWunderground .highlights {
+  float: left;
+  width: 230px;
+}
+
+.WeatherWunderground .temperature {
+  width: 230px;
+  height: 100px;
+  font-size: 70px;
+  text-align: center;
+}
+
+.WeatherWunderground .city {
+  font-size: 25px;
+  text-align: center;
+}
 /* Details */
 .WeatherWunderground .details {
   float: right;
   margin-top: 10px;
-  width: 435px;
+  width: 475px;
 }
 
 .WeatherWunderground .wind {
@@ -57,11 +72,12 @@
   text-align: left;
 }
 
-.WeatherWunderground .description.alert {
-  color: red;
+.WeatherWunderground .precip {
+  font-size: 25px;
+  text-align: left;
 }
 
 .WeatherWunderground .date {
   font-size: 25px;
-  text-align: left;
+  text-align: center;
 }
