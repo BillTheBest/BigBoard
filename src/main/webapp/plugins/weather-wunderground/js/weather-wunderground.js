@@ -166,7 +166,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Ice Pellets" || condition == "Hail" || condition == "Snow Grains" ) {
+  if( condition == "Hail" ) {
     
     if( this.isDayTime() ) {
       
@@ -179,7 +179,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Light Freezing Rain" || condition == "Light Freezing Drizzle" ) {
+  if( condition == "Freezing Rain" ) {
     
     if( this.isDayTime() ) {
       
@@ -205,7 +205,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Cloudy" ) {
+  if( condition == "Cloudy" || condition == "Overcast") {
     
     if( this.isDayTime() ) {
       
@@ -218,7 +218,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Partly Cloudy" ) {
+  if( condition == "Partly Cloudy" ||  condition == "Scattered Clouds") {
     
     if( this.isDayTime() ) {
       
@@ -250,10 +250,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Rain" || condition == "Light Rain" || condition == "Light Rainshower"
-      || condition == "Light Drizzle" || condition == "Thunderstorm with light rainshowers"
-      || condition == "Thunderstorm with rainshowers" || condition == "Thunderstorm with heavy rainshowers"
-      || condition == "Thunderstorm" || condition == "Heavy Rainshower" || condition == "Rainshower" ) {
+  if( condition == "Rain" || condition == "Light Rain" ) {
     
     if( this.isDayTime() ) {
       
@@ -269,7 +266,16 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   if( condition == "Mainly Sunny" || condition == "Sunny" ) {
     return this.pluginPath + "/images/sun.svg";
   }
+
   
+  // Seen on Wunderground feed:
+  // Overcast
+  // Mist
+  // Mostly Cloudy
+  // Scattered Clouds
+  // Light Rain
+
+ 
 
   // cloud.svg
   // cloudy-mostly.svg
