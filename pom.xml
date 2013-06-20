@@ -27,7 +27,7 @@
 		<dependency>
 			<groupId>org.twitter4j</groupId>
 			<artifactId>twitter4j-core</artifactId>
-			<version>2.2.5</version>
+			<version>3.0.3</version>
 		</dependency>
 
 		<!-- END twitter4j -->

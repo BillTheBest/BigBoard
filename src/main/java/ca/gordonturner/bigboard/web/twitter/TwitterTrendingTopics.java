@@ -5,7 +5,6 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +15,7 @@ import twitter4j.Trends;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.auth.AccessToken;
 
 /**
  * @author gturner
@@ -25,7 +25,7 @@ import twitter4j.TwitterFactory;
 public class TwitterTrendingTopics
 {
 
-  Logger logger = Logger.getLogger( TwitterTrendingTopics.class );
+  Logger logger = Logger.getLogger(TwitterTrendingTopics.class);
 
 
   private HashMap<String, Trends> trendsCollection;
@@ -59,17 +59,17 @@ public class TwitterTrendingTopics
 
     int i;
 
-    for( String key : trendsCollection.keySet() )
+    for (String key : trendsCollection.keySet())
     {
 
-      returnString.append( "</br></br>" + key + "</br>" );
+      returnString.append("</br></br>" + key + "</br>");
 
       i = 0;
 
-      for( Trend trend : trendsCollection.get( key ).getTrends() )
+      for (Trend trend : trendsCollection.get(key).getTrends())
       {
         i++;
-        returnString.append( i + " " + trend.getName() + "</br>" );
+        returnString.append(i + " " + trend.getName() + "</br>");
       }
     }
 
@@ -82,70 +82,35 @@ public class TwitterTrendingTopics
    */
   @RequestMapping("/TwitterTrendingTopics.html")
   public @ResponseBody
-  HashMap<String, Trend[]> handleTwitterTrendingTopics( @RequestParam(value = "woeid", required = true)
-  String woeid )
+  HashMap<String, Trend[]> handleTwitterTrendingTopics(@RequestParam(value = "woeid", required = true) String woeid)
   {
-    logger.debug( "Called" );
+    logger.debug("Called");
 
-    if( "PROD".equals( mode ) )
+    if (!trendsCollection.containsKey(woeid))
     {
-      return handleTwitterTrendingTopicsProd( woeid );
-    }
-    else
-    {
-      return handleTwitterTrendingTopicsTest( woeid );
-    }
-  }
-
-
-  /**
-   * @param screenName
-   * @param stringCurrentTweetIndex
-   * @return
-   */
-  private HashMap<String, Trend[]> handleTwitterTrendingTopicsProd( String woeid )
-  {
-
-    if( !trendsCollection.containsKey( woeid ) )
-    {
-      logger.info( "No cached trending tweets." );
-      updateTwitterTrendingTopics( woeid );
+      logger.info("No cached trending tweets.");
+      updateTwitterTrendingTopics(woeid);
     }
     else
     {
       GregorianCalendar now = new GregorianCalendar();
-      GregorianCalendar lastUpdatePlusRefresh = (GregorianCalendar) lastUpdateCollections.get( woeid ).clone();
-      lastUpdatePlusRefresh.add( GregorianCalendar.MINUTE, refreshPeriodInMinutes );
+      GregorianCalendar lastUpdatePlusRefresh = (GregorianCalendar) lastUpdateCollections.get(woeid).clone();
+      lastUpdatePlusRefresh.add(GregorianCalendar.MINUTE, refreshPeriodInMinutes);
 
-      if( now.after( lastUpdatePlusRefresh ) )
+      if (now.after(lastUpdatePlusRefresh))
       {
-        logger.info( "Cache has expired, calling twitter api." );
-        updateTwitterTrendingTopics( woeid );
+        logger.info("Cache has expired, calling twitter api.");
+        updateTwitterTrendingTopics(woeid);
       }
       else
       {
-        logger.info( "Cache is still valid." );
+        logger.info("Cache is still valid.");
       }
     }
 
     HashMap<String, Trend[]> json = new HashMap<String, Trend[]>();
 
-    json.put( "trends", trendsCollection.get( woeid ).getTrends() );
-    return json;
-  }
-
-
-  /**
-   * @param screenName
-   * @param stringCurrentTweetIndex
-   * @return
-   */
-  private HashMap<String, Trend[]> handleTwitterTrendingTopicsTest( String woeid )
-  {
-
-
-    HashMap<String, Trend[]> json = new HashMap<String, Trend[]>();
-    json.put( "placeholder", null );
+    json.put("trends", trendsCollection.get(woeid).getTrends());
     return json;
   }
 
@@ -154,31 +119,26 @@ public class TwitterTrendingTopics
    * @param screenName
    * @param numberOfTweets
    */
-  private void updateTwitterTrendingTopics( String woeid )
+  private void updateTwitterTrendingTopics(String woeid)
   {
-    logger.info( "Updating twitter trending topics" );
+    logger.info("Updating twitter trending topics");
 
     Twitter twitter = new TwitterFactory().getInstance();
+    twitter.setOAuthConsumer("consumerKey", "consumerSecret");
+    twitter.setOAuthAccessToken(new AccessToken("token", "tokenSecret"));
+    
+    // TOOD: Move this to a factory method.
 
     try
     {
-      trendsCollection.put( woeid, twitter.getLocationTrends( Integer.parseInt( woeid ) ) );
+      trendsCollection.put(woeid, twitter.getPlaceTrends(Integer.parseInt(woeid)));
     }
-    catch( TwitterException e )
+    catch (TwitterException e)
     {
-      logger.error( "Error retrieving daily trendsList.", e );
+      logger.error("Error retrieving daily trendsList.", e);
     }
 
-    lastUpdateCollections.put( woeid, new GregorianCalendar() );
+    lastUpdateCollections.put(woeid, new GregorianCalendar());
   }
 
-
-  /**
-   * @param mode the mode to set
-   */
-  @Value("${TwitterTrendingTopics.mode}")
-  public void setMode( String mode )
-  {
-    this.mode = mode;
-  }
 }

@@ -1,25 +1,21 @@
 package ca.gordonturner.bigboard.web.twitter;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
-import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import twitter4j.Paging;
-import twitter4j.ProfileImage;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.User;
+import twitter4j.auth.AccessToken;
 
 @Controller
 public class TwitterSingleUserMultiTweet
@@ -87,22 +83,6 @@ public class TwitterSingleUserMultiTweet
   {
     logger.debug( "Called with screenName: '" + screenName + "'" );
 
-    if( "PROD".equals( mode ) )
-    {
-      return handleTwitterSingleUserMultiTweetProd( screenName );
-    }
-    else
-    {
-      return handleTwitterSingleUserMultiTweetTest( screenName );
-    }
-  }
-
-
-  /*
-   *
-   */
-  private HashMap<String, Object> handleTwitterSingleUserMultiTweetProd( String screenName )
-  {
     Tweets tweets = tweetsCollection.get( screenName );
 
     // Check to see if the screen name exists in the HashMap, create it if it doesn't.   
@@ -145,44 +125,8 @@ public class TwitterSingleUserMultiTweet
 
     HashMap<String, Object> json = new HashMap<String, Object>();
     json.put( "screenName", screenName );
-    json.put( "profileImageUrl", tweets.getProfileImage().getURL() );
+    json.put( "profileImageUrl", tweets.getProfileImageUrl() );
     json.put( "tweet", tweets.getTwitterStatuses() );
-    return json;
-  }
-
-
-  /*
-   *
-   */
-  private HashMap<String, Object> handleTwitterSingleUserMultiTweetTest( String screenName )
-  {
-
-    List<Status> statuses = new ArrayList<Status>();
-    statuses
-        .add( new TwitterTestStatus(
-            new Date(),
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." ) );
-    statuses
-        .add( new TwitterTestStatus( new Date(),
-            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." ) );
-    statuses.add( new TwitterTestStatus( new Date(),
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." ) );
-    statuses
-        .add( new TwitterTestStatus( new Date(),
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." ) );
-
-    Calendar oldDate = Calendar.getInstance();
-    oldDate.add( Calendar.HOUR, -6 );
-
-    statuses
-        .add( new TwitterTestStatus(
-            oldDate.getTime(),
-            "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae no." ) );
-
-    HashMap<String, Object> json = new HashMap<String, Object>();
-    json.put( "screenName", screenName );
-    json.put( "profileImageUrl", "./images/twitter-placeholder.jpeg" );
-    json.put( "tweet", statuses );
     return json;
   }
 
@@ -197,6 +141,10 @@ public class TwitterSingleUserMultiTweet
 
     Paging paging = new Paging( 1, numberOfTweets );
     Twitter twitter = new TwitterFactory().getInstance();
+    twitter.setOAuthConsumer("consumerKey", "consumerSecret");
+    twitter.setOAuthAccessToken(new AccessToken("token", "tokenSecret"));
+        
+    // TOOD: Move this to a factory method.
 
     try
     {
@@ -218,27 +166,22 @@ public class TwitterSingleUserMultiTweet
     logger.info( "Updating twitter profile image" );
 
     Twitter twitter = new TwitterFactory().getInstance();
+    twitter.setOAuthConsumer("consumerKey", "consumerSecret");
+    twitter.setOAuthAccessToken(new AccessToken("token", "tokenSecret"));
+    
+    // TOOD: Move this to a factory method.
 
     try
     {
-      tweets.setProfileImage( twitter.getProfileImage( tweets.getScreenName(), ProfileImage.NORMAL ) );
+      User user = twitter.verifyCredentials();
+      tweets.setProfileImageUrl( user.getProfileImageURLHttps() );
     }
     catch( TwitterException te )
     {
       logger.error( "Problem with twitter profile image request", te );
     }
 
-    logger.debug( "Updating twitter profile image to: " + tweets.getProfileImage().getURL() );
+    logger.debug( "Updating twitter profile image to: " + tweets.getProfileImageUrl() );
 
-  }
-
-
-  /**
-   * @param mode the mode to set
-   */
-  @Value("${TwitterSingleUserMultiTweet.mode}")
-  public void setMode( String mode )
-  {
-    this.mode = mode;
   }
 }

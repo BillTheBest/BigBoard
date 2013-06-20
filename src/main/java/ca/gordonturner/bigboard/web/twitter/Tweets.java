@@ -3,7 +3,6 @@ package ca.gordonturner.bigboard.web.twitter;
 import java.util.Calendar;
 import java.util.List;
 
-import twitter4j.ProfileImage;
 import twitter4j.Status;
 
 /**
@@ -20,7 +19,7 @@ public class Tweets
 
   private List<Status> twitterStatuses;
 
-  private ProfileImage profileImage;
+  private String profileImageUrl;
 
   
   /**
@@ -82,17 +81,17 @@ public class Tweets
   /**
    * @return the profileImage
    */
-  public ProfileImage getProfileImage()
+  public String getProfileImageUrl()
   {
-    return profileImage;
+    return profileImageUrl;
   }
 
   /**
    * @param profileImage the profileImage to set
    */
-  public void setProfileImage( ProfileImage profileImage )
+  public void setProfileImageUrl( String profileImageUrl )
   {
-    this.profileImage = profileImage;
+    this.profileImageUrl = profileImageUrl;
   }
 
 }
