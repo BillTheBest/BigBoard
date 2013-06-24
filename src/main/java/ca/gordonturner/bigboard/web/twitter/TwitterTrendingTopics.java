@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,7 +36,17 @@ public class TwitterTrendingTopics
   // The Twitter API will throttle you for more then 150 hits / hour.
   private int refreshPeriodInMinutes = 15;
 
-  private String mode;
+  @Value("${twitter.oauth.consumerKey}")
+  private String consumerKey;
+
+  @Value("${twitter.oauth.consumerSecret}")
+  private String consumerSecret;
+
+  @Value("${twitter.oauth.accessToken}")
+  private String accessToken;
+
+  @Value("${twitter.oauth.accessTokenSecret}")
+  private String accessTokenSecret;
 
 
   /*
@@ -82,9 +93,9 @@ public class TwitterTrendingTopics
    */
   @RequestMapping("/TwitterTrendingTopics.html")
   public @ResponseBody
-  HashMap<String, Trend[]> handleTwitterTrendingTopics(@RequestParam(value = "woeid", required = true) String woeid)
+  HashMap<String, String[]> handleTwitterTrendingTopics(@RequestParam(value = "woeid", required = true) String woeid)
   {
-    logger.debug("Called");
+    logger.debug("Called, with woeid: '" + woeid + "'");
 
     if (!trendsCollection.containsKey(woeid))
     {
@@ -108,9 +119,20 @@ public class TwitterTrendingTopics
       }
     }
 
-    HashMap<String, Trend[]> json = new HashMap<String, Trend[]>();
+    HashMap<String, String[]> json = new HashMap<String, String[]>();
 
-    json.put("trends", trendsCollection.get(woeid).getTrends());
+    Trend[] trends = trendsCollection.get(woeid).getTrends();
+    String[] trendsName = new String[trends.length];
+    
+    int i=0;
+    for(Trend trend : trends)
+    {
+      logger.info( trend.getName() );
+      trendsName[i] = trend.getName();
+      i++;
+    }
+    
+    json.put("trends", trendsName);
     return json;
   }
 
@@ -121,11 +143,11 @@ public class TwitterTrendingTopics
    */
   private void updateTwitterTrendingTopics(String woeid)
   {
-    logger.info("Updating twitter trending topics");
+    logger.info("Updating twitter trending topics, called with woeid: '" + woeid + "'");
 
     Twitter twitter = new TwitterFactory().getInstance();
-    twitter.setOAuthConsumer("consumerKey", "consumerSecret");
-    twitter.setOAuthAccessToken(new AccessToken("token", "tokenSecret"));
+    twitter.setOAuthConsumer(consumerKey, consumerSecret);
+    twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
     
     // TOOD: Move this to a factory method.
 

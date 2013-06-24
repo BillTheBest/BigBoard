@@ -82,7 +82,7 @@ TwitterTrendingTopics.prototype.receivedData = function( data ) {
     var html = "";
     for( var i = 0; i < 10; i++ ) {
       
-      html += "<div class='TwitterTrendingTopicsTopic'>" + data.trends[i].name + "</div>";
+      html += "<div class='TwitterTrendingTopicsTopic'>" + data.trends[i] + "</div>";
     }
     
     $( "#" + this.id + " .TwitterTrendingTopics" ).html( html );

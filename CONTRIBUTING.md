@@ -37,7 +37,7 @@ Developing - Running Tomcat 'inplace'
 
 - To build, create war and run tomcat 'inplace' at http://localhost:8080/:
 
-    mvn clean install tomcat7:run
+    mvn clean install tomcat7:run -DCUSTOM_HOME="/Users/gturner/Developer/Work/BigBoardCustom"
     
 - In this mode any changes to HTML, CSS, image or other files are available immediately without restarting Tomcat.
 - Any changes to Java code however requires a Tomcat restart.

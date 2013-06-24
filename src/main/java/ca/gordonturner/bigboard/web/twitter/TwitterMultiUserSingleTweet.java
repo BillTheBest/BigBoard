@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,7 +37,17 @@ public class TwitterMultiUserSingleTweet
   // Hard coding number of tweets to 25.
   private int numberOfTweets = 15;
 
-  private String mode;
+  @Value("${twitter.oauth.consumerKey}")
+  private String consumerKey;
+
+  @Value("${twitter.oauth.consumerSecret}")
+  private String consumerSecret;
+
+  @Value("${twitter.oauth.accessToken}")
+  private String accessToken;
+
+  @Value("${twitter.oauth.accessTokenSecret}")
+  private String accessTokenSecret;
 
 
   /*
@@ -179,9 +190,10 @@ public class TwitterMultiUserSingleTweet
     logger.info( "Updating twitter statuses" );
 
     Paging paging = new Paging( 1, numberOfTweets );
+    
     Twitter twitter = new TwitterFactory().getInstance();
-    twitter.setOAuthConsumer("consumerKey", "consumerSecret");
-    twitter.setOAuthAccessToken(new AccessToken("token", "tokenSecret"));
+    twitter.setOAuthConsumer(consumerKey, consumerSecret);
+    twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
     
     // TOOD: Move this to a factory method.
 
@@ -203,10 +215,10 @@ public class TwitterMultiUserSingleTweet
   private void updateTwitterPicture( Tweets tweets )
   {
     logger.info( "Updating twitter profile image" );
-
+    
     Twitter twitter = new TwitterFactory().getInstance();
-    twitter.setOAuthConsumer("consumerKey", "consumerSecret");
-    twitter.setOAuthAccessToken(new AccessToken("token", "tokenSecret"));
+    twitter.setOAuthConsumer(consumerKey, consumerSecret);
+    twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
     
     // TOOD: Move this to a factory method.
     

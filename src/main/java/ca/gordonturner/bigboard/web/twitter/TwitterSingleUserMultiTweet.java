@@ -4,6 +4,7 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +15,6 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.User;
 import twitter4j.auth.AccessToken;
 
 @Controller
@@ -31,7 +31,17 @@ public class TwitterSingleUserMultiTweet
   // Hard coding number of tweets to 10.
   private int numberOfTweets = 5;
 
-  private String mode;
+  @Value("${twitter.oauth.consumerKey}")
+  private String consumerKey;
+
+  @Value("${twitter.oauth.consumerSecret}")
+  private String consumerSecret;
+
+  @Value("${twitter.oauth.accessToken}")
+  private String accessToken;
+
+  @Value("${twitter.oauth.accessTokenSecret}")
+  private String accessTokenSecret;
 
 
   /*
@@ -140,9 +150,10 @@ public class TwitterSingleUserMultiTweet
     logger.info( "Updating twitter statuses" );
 
     Paging paging = new Paging( 1, numberOfTweets );
+    
     Twitter twitter = new TwitterFactory().getInstance();
-    twitter.setOAuthConsumer("consumerKey", "consumerSecret");
-    twitter.setOAuthAccessToken(new AccessToken("token", "tokenSecret"));
+    twitter.setOAuthConsumer(consumerKey, consumerSecret);
+    twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
         
     // TOOD: Move this to a factory method.
 
@@ -164,22 +175,15 @@ public class TwitterSingleUserMultiTweet
   private void updateTwitterPicture( Tweets tweets )
   {
     logger.info( "Updating twitter profile image" );
-
+    
     Twitter twitter = new TwitterFactory().getInstance();
-    twitter.setOAuthConsumer("consumerKey", "consumerSecret");
-    twitter.setOAuthAccessToken(new AccessToken("token", "tokenSecret"));
+    twitter.setOAuthConsumer(consumerKey, consumerSecret);
+    twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
     
     // TOOD: Move this to a factory method.
 
-    try
-    {
-      User user = twitter.verifyCredentials();
-      tweets.setProfileImageUrl( user.getProfileImageURLHttps() );
-    }
-    catch( TwitterException te )
-    {
-      logger.error( "Problem with twitter profile image request", te );
-    }
+    //tweets.setProfileImageUrl( user.getProfileImageURLHttps() );
+    tweets.setProfileImageUrl( tweets.getTwitterStatuses().get( 0 ).getUser().getProfileImageURLHttps() );
 
     logger.debug( "Updating twitter profile image to: " + tweets.getProfileImageUrl() );
 
