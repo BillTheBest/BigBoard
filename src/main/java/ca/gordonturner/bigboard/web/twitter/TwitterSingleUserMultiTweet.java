@@ -175,14 +175,12 @@ public class TwitterSingleUserMultiTweet
   private void updateTwitterPicture( Tweets tweets )
   {
     logger.info( "Updating twitter profile image" );
-    
+
+    // TOOD: Move this to a factory method.
     Twitter twitter = new TwitterFactory().getInstance();
     twitter.setOAuthConsumer(consumerKey, consumerSecret);
     twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
     
-    // TOOD: Move this to a factory method.
-
-    //tweets.setProfileImageUrl( user.getProfileImageURLHttps() );
     tweets.setProfileImageUrl( tweets.getTwitterStatuses().get( 0 ).getUser().getProfileImageURLHttps() );
 
     logger.debug( "Updating twitter profile image to: " + tweets.getProfileImageUrl() );

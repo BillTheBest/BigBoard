@@ -16,7 +16,6 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.User;
 import twitter4j.auth.AccessToken;
 
 /**
@@ -216,21 +215,12 @@ public class TwitterMultiUserSingleTweet
   {
     logger.info( "Updating twitter profile image" );
     
+    // TOOD: Move this to a factory method.
     Twitter twitter = new TwitterFactory().getInstance();
     twitter.setOAuthConsumer(consumerKey, consumerSecret);
     twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
     
-    // TOOD: Move this to a factory method.
-    
-    try
-    {
-      User user = twitter.verifyCredentials();
-      tweets.setProfileImageUrl( user.getProfileImageURLHttps() );
-    }
-    catch( TwitterException te )
-    {
-      logger.error( "Problem with twitter profile image request", te );
-    }
+    tweets.setProfileImageUrl( tweets.getTwitterStatuses().get( 0 ).getUser().getProfileImageURLHttps() );
 
     logger.debug( "Updating twitter profile image to: " + tweets.getProfileImageUrl() );
 
