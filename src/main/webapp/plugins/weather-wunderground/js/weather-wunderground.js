@@ -205,7 +205,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Cloudy" || condition == "Overcast") {
+  if( condition == "Cloudy" || condition == "Overcast" || condition == "Haze" ) {
     
     if( this.isDayTime() ) {
       
@@ -274,6 +274,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   // Mostly Cloudy
   // Scattered Clouds
   // Light Rain
+  // Haze
 
  
 
