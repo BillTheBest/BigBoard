@@ -54,7 +54,7 @@ public class UtilityAppFiguresSales
   */
   @RequestMapping("/UtilityAppFiguresSales.html")
   @ResponseBody
-  public HashMap<String, Object> handleTwitterSingleUserMultiTweet( @RequestParam(value = "id", required = true)
+  public HashMap<String, Object> handleUtilityAppFiguresSales( @RequestParam(value = "id", required = true)
   String id, @RequestParam(value = "appFiguresId", required = true)
   String appFiguresId )
   {
