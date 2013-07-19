@@ -266,6 +266,11 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   if( condition == "Mainly Sunny" || condition == "Sunny" ) {
     return this.pluginPath + "/images/sun.svg";
   }
+  
+
+  if( condition == "Thunderstorms and Rain" ) {
+    return this.pluginPath + "/images/thunderstorm.svg";
+  }
 
   
   // Seen on Wunderground feed:
@@ -275,6 +280,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   // Scattered Clouds
   // Light Rain
   // Haze
+  // Thunderstorms and Rain
 
  
 
