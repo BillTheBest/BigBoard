@@ -268,7 +268,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Thunderstorms and Rain" ) {
+  if( condition == "Thunderstorms and Rain" || condition == "Thunderstorm" ) {
     return this.pluginPath + "/images/thunderstorm.svg";
   }
 
