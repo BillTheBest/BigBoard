@@ -4,6 +4,9 @@ Feature Requests
 Requests
 --------
 
+- People in space
+  - http://api.open-notify.org/astros/v1/
+
 - Todo list
 
 - Daily task checkbox
