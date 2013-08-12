@@ -14,7 +14,7 @@ Configuration
 Features
 --------
 
-- Current temperature and weather
+- Forecast
 - Allow multiple locations
 - Use weather icons
 
@@ -33,13 +33,10 @@ Notes
 
 - Requires id.
 
-- JSON conditions:
+- JSON forcast:
 
-    http://api.wunderground.com/api/XXXXXXXXXXXXXXXX/conditions/q/Canada/Toronto.json
+    http://api.wunderground.com/api/XXXXXXXXXXXXXXXX/forecast/q/Canada/Toronto.json
 
 - Configuation points:
   - API key
   - Location query: Country/City, Airport Code etc.
-  
-- Use sun rise, sun set to determine day and night weather icons.
-  

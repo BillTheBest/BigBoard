@@ -7,6 +7,12 @@ Configuration
 - Query App Figures instance to get app sales.
 
 
+Features
+--------
+
+- List downloads of apps tracked by App Figures.
+
+
 Notes
 -----
 
