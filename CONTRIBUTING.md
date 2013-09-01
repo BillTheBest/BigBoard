@@ -12,9 +12,10 @@ Developing - Setup
 - Please use the code style formatter xml files in the contributing folder.
 
 - To setup eclipse for BigBoard, please run:
-
-    mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
-    
+```
+ mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
+```
+ 
   - **eclipse:eclipse** creates the .project and .classpath files for your environment based on the pom.xml
   - **downloadSources=true** downloads the source for all the java dependencies, so that they are available for 
   debugging.  This can take a while, but is a one time event.
@@ -28,23 +29,26 @@ Developing - Building
 ---------------------
 
 - Run maven to build the war and executable jar:
-
-    mvn clean install tomcat7:exec-war
+```
+mvn clean install tomcat7:exec-war
+```
 
 
 Developing - Running Tomcat 'inplace'
 --------------------------------------
 
 - To build, create war and run tomcat 'inplace' at http://localhost:8080/:
-
-    mvn clean install tomcat7:run -DCUSTOM_HOME="/Users/gturner/Developer/Work/BigBoardCustom"
-    
+```
+mvn clean install tomcat7:run -DCUSTOM_HOME="/Users/gturner/Developer/Work/BigBoardCustom"
+```
+ 
 - In this mode any changes to HTML, CSS, image or other files are available immediately without restarting Tomcat.
 - Any changes to Java code however requires a Tomcat restart.
 
 - To view the tomcat log file when using 'tomcat:run' on OSX, Linux or other Unix type system:
-
-    tail -F ./target/tomcat/logs/big-board.log
+```
+tail -F ./target/tomcat/logs/big-board.log
+```
 
 - This can be run from the same location that the mvn command is run from.
 
@@ -65,7 +69,7 @@ JavaScript
 - Include a description of the object, full sentence.
 
 - Example:
-
+```
     /**
      * The ReferencePlugin object.
      * 
@@ -82,7 +86,7 @@ JavaScript
     function ReferencePlugin( id, interval, exampleParameter ) {
       /* */
     }
-
+```
 
 - Reference:
 http://usejsdoc.org/
