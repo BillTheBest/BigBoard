@@ -27,26 +27,27 @@ Features
 - SickBeard history
 
 
-Installing - Executable jar
----------------------------
+Installing - running executable jar
+-----------------------------------
 
 - Required:
   - Java 1.6 or greater
 
 - Copy the executable jar to a folder where you want to run it from.
 - Start BigBoard by running:
+
 ```
     java -jar BigBoard-X.X-war-exec.jar -httpPort 8080 -extractDirectory BigBoardExtract -DCUSTOM_HOME=\"/var/www/big-board-custom\"
 ```
-  - NOTE: This is all one line
-  - **X.X** is the version of BigBoard.
-  - **8080** is the port for BigBoard to listen on.
-  - **BigBoardExtract** is the directory that the jar is extracted to and run from.
-  - **/var/www/big-board-custom** is the directory for custom content.
+
+  - `X.X` is the version of BigBoard.
+  - `8080` is the port for BigBoard to listen on.
+  - `BigBoardExtract` is the directory that the jar is extracted to and run from.
+  - `/var/www/big-board-custom` is the directory for custom content.
 
 
-Installing - war
-----------------
+Installing - deploying the war
+------------------------------
 
 - Required:
   - Java 1.6 or greater
@@ -55,16 +56,13 @@ Installing - war
 - Edit startup.sh or startup.bat and add the following lines at the first blank line in the file:
 
 ```
-# BEGIN ADDED
 echo "Setting CUSTOM_HOME JAVA_OPTS values"
 export JAVA_OPTS="$JAVA_OPTS -DCUSTOM_HOME=\"/var/www/big-board-custom\""
-# END ADDED
 ```
 
-  - **/var/www/big-board-custom** is the directory for custom content.
-  
+- `/var/www/big-board-custom` is the directory for custom content.
 - Start Tomcat.
-- Copy the war file to the `webapps` folder, BigBoard should be deployed automatically.
+- Deploy the war to Tomcat, either by copying the war to `webapps` or using the Manger.
 
 
 
