@@ -40,6 +40,7 @@ Installing - running executable jar
     java -jar BigBoard-X.X-war-exec.jar -httpPort 8080 -extractDirectory BigBoardExtract -DCUSTOM_HOME=\"/var/www/big-board-custom\"
 ```
 
+- Where:
   - `X.X` is the version of BigBoard.
   - `8080` is the port for BigBoard to listen on.
   - `BigBoardExtract` is the directory that the jar is extracted to and run from.
@@ -60,7 +61,9 @@ echo "Setting CUSTOM_HOME JAVA_OPTS values"
 export JAVA_OPTS="$JAVA_OPTS -DCUSTOM_HOME=\"/var/www/big-board-custom\""
 ```
 
-- `/var/www/big-board-custom` is the directory for custom content.
+- Where:
+  - `/var/www/big-board-custom` is the directory for custom content.
+
 - Start Tomcat.
 - Deploy the war to Tomcat, either by copying the war to `webapps` or using the Manger.
 

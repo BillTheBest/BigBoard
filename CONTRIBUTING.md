@@ -17,12 +17,13 @@ Developing - Setup
  mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
 ```
 
+- Where:
   - `eclipse:eclipse` creates the .project and .classpath files for your environment based on the pom.xml
   - `downloadSources=true` downloads the source for all the java dependencies, so that they are available for 
-  debugging.  This can take a while, but is a one time event.
-  - `downloadJavadocs=true` downloads the javadocs for all the java dependencies.  This can take a while, but is
-  also a one time event.
-  
+  debugging.
+  - `downloadJavadocs=true` downloads the javadocs for all the java dependencies.
+
+- NOTE: Downloading sources and javadoc can take a while, but is a one time event.
 - Import the project into Eclipse.
 
 
@@ -54,8 +55,6 @@ mvn clean install tomcat7:run -DCUSTOM_HOME="/Users/gturner/Developer/Work/BigBo
 tail -F ./target/tomcat/logs/big-board.log
 ```
 
-- This can be run from the same location that the mvn command is run from.
-
 
 JavaScript
 ------------------------------------------------------------------------------------------------------------------------
@@ -70,7 +69,7 @@ JavaScript
     - http://usejsdoc.org/tags-param.html
     - http://usejsdoc.org/tags-returns.html
 
-- Include a description of the object, full sentence.
+- Include a description of the object, full sentences.
 
 - Example:
 
@@ -93,6 +92,3 @@ JavaScript
     }
 ```
 
-- Reference:
-http://usejsdoc.org/
-https://github.com/jsdoc3/jsdoc
