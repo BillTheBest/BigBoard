@@ -155,92 +155,43 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   if( condition == "Drifting Snow" || condition == "Light Snowshower" || condition == "Light Snow"
       || condition == "Snowshower" ) {
     
-    if( this.isDayTime() ) {
-      
-      return this.pluginPath + "/images/snow-day.svg";
-    }
-    else {
-      
-      return this.pluginPath + "/images/snow-night.svg";
-    }
+    return this.pluginPath + "/images/snow-day.svg";
   }
   
 
   if( condition == "Hail" ) {
     
-    if( this.isDayTime() ) {
-      
-      return this.pluginPath + "/images/hail-day.svg";
-    }
-    else {
-      
-      return this.pluginPath + "/images/hail-night.svg";
-    }
+    return this.pluginPath + "/images/hail-day.svg";
   }
   
 
   if( condition == "Freezing Rain" ) {
     
-    if( this.isDayTime() ) {
-      
-      return this.pluginPath + "/images/rain-freezing-day.svg";
-    }
-    else {
-      
-      return this.pluginPath + "/images/rain-freezing-night.svg";
-    }
+    return this.pluginPath + "/images/rain-freezing-day.svg";
   }
   
 
   if( condition == "Mainly Clear" || condition == "Clear" ) {
     
-    if( this.isDayTime() ) {
-      
-      return this.pluginPath + "/images/sun.svg";
-    }
-    else {
-      
-      return this.pluginPath + "/images/moon.svg";
-    }
+    return this.pluginPath + "/images/sun.svg";
   }
   
 
   if( condition == "Cloudy" || condition == "Overcast" || condition == "Haze" ) {
     
-    if( this.isDayTime() ) {
-      
-      return this.pluginPath + "/images/cloudy-day.svg";
-    }
-    else {
-      
-      return this.pluginPath + "/images/cloudy-night.svg";
-    }
+    return this.pluginPath + "/images/cloudy-day.svg";
   }
   
 
   if( condition == "Partly Cloudy" ||  condition == "Scattered Clouds") {
     
-    if( this.isDayTime() ) {
-      
-      return this.pluginPath + "/images/cloudy-day.svg";
-    }
-    else {
-      
-      return this.pluginPath + "/images/cloudy-night.svg";
-    }
+    return this.pluginPath + "/images/cloudy-day.svg";
   }
   
 
   if( condition == "Mostly Cloudy" ) {
     
-    if( this.isDayTime() ) {
-      
-      return this.pluginPath + "/images/cloudy-mostly-day.svg";
-    }
-    else {
-      
-      return this.pluginPath + "/images/cloudy-mostly-night.svg";
-    }
+    return this.pluginPath + "/images/cloudy-mostly-day.svg";
   }
   
 
@@ -251,15 +202,8 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   
 
   if( condition == "Rain" || condition == "Light Rain" || condition == "Chance of Rain") {
-    
-    if( this.isDayTime() ) {
-      
-      return this.pluginPath + "/images/rainy-day.svg";
-    }
-    else {
-      
-      return this.pluginPath + "/images/rainy-night.svg";
-    }
+
+    return this.pluginPath + "/images/rainy-day.svg";
   }
   
 
@@ -301,25 +245,4 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   // thunderstorm.svg
   
   return this.pluginPath + "/images/caution.svg";
-}
-
-
-/**
- * Returns formatd date string from date object.
- * 
- * @return {boolean} Is it day time?
- */
-WeatherWunderground.prototype.isDayTime = function() {
-
-  var hour = ( new Date() ).getHours();
-  
-  // Somewhat arbitraily setting day.
-  if( hour > 7 && hour < 19 ) {
-    
-    return true;
-  }
-  else {
-    
-    return false;
-  }
 }

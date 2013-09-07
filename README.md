@@ -37,7 +37,7 @@ Installing - running executable jar
 - Start BigBoard by running:
 
 ```
-    java -jar BigBoard-X.X-war-exec.jar -httpPort 8080 -extractDirectory BigBoardExtract -DCUSTOM_HOME=\"/var/www/big-board-custom\"
+java -jar BigBoard-X.X-war-exec.jar -httpPort 8080 -extractDirectory BigBoardExtract -DCUSTOM_HOME=\"/var/www/big-board-custom\"
 ```
 
 - Where:
