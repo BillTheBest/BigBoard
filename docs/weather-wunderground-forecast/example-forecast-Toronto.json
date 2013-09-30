@@ -1,0 +1,393 @@
+{
+  "forecast": {
+    "simpleforecast": {
+      "forecastday": [
+        {
+          "avehumidity": 75, 
+          "avewind": {
+            "degrees": 183, 
+            "dir": "South", 
+            "kph": 19, 
+            "mph": 12
+          }, 
+          "conditions": "Chance of Rain", 
+          "date": {
+            "ampm": "PM", 
+            "day": 27, 
+            "epoch": "1374980400", 
+            "hour": 23, 
+            "isdst": "1", 
+            "min": "00", 
+            "month": 7, 
+            "monthname": "July", 
+            "pretty": "11:00 PM EDT on July 27, 2013", 
+            "sec": 0, 
+            "tz_long": "America/Montreal", 
+            "tz_short": "EDT", 
+            "weekday": "Saturday", 
+            "weekday_short": "Sat", 
+            "yday": 207, 
+            "year": 2013
+          }, 
+          "high": {
+            "celsius": "24", 
+            "fahrenheit": "75"
+          }, 
+          "icon": "chancerain", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/chancerain.gif", 
+          "low": {
+            "celsius": "18", 
+            "fahrenheit": "64"
+          }, 
+          "maxhumidity": 84, 
+          "maxwind": {
+            "degrees": 178, 
+            "dir": "South", 
+            "kph": 22, 
+            "mph": 14
+          }, 
+          "minhumidity": 58, 
+          "period": 1, 
+          "pop": 30, 
+          "qpf_allday": {
+            "in": 0.06, 
+            "mm": 1.5
+          }, 
+          "qpf_day": {
+            "in": 0.01, 
+            "mm": 0.3
+          }, 
+          "qpf_night": {
+            "in": 0.13, 
+            "mm": 3.3
+          }, 
+          "skyicon": "mostlycloudy", 
+          "snow_allday": {
+            "cm": 0, 
+            "in": 0
+          }, 
+          "snow_day": {
+            "cm": 0, 
+            "in": 0
+          }, 
+          "snow_night": {
+            "cm": 0, 
+            "in": 0
+          }
+        }, 
+        {
+          "avehumidity": 66, 
+          "avewind": {
+            "degrees": 222, 
+            "dir": "SW", 
+            "kph": 21, 
+            "mph": 13
+          }, 
+          "conditions": "Thunderstorm", 
+          "date": {
+            "ampm": "PM", 
+            "day": 28, 
+            "epoch": "1375066800", 
+            "hour": 23, 
+            "isdst": "1", 
+            "min": "00", 
+            "month": 7, 
+            "monthname": "July", 
+            "pretty": "11:00 PM EDT on July 28, 2013", 
+            "sec": 0, 
+            "tz_long": "America/Montreal", 
+            "tz_short": "EDT", 
+            "weekday": "Sunday", 
+            "weekday_short": "Sun", 
+            "yday": 208, 
+            "year": 2013
+          }, 
+          "high": {
+            "celsius": "22", 
+            "fahrenheit": "72"
+          }, 
+          "icon": "tstorms", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/tstorms.gif", 
+          "low": {
+            "celsius": "15", 
+            "fahrenheit": "59"
+          }, 
+          "maxhumidity": 91, 
+          "maxwind": {
+            "degrees": 238, 
+            "dir": "WSW", 
+            "kph": 24, 
+            "mph": 15
+          }, 
+          "minhumidity": 54, 
+          "period": 2, 
+          "pop": 50, 
+          "qpf_allday": {
+            "in": 0.09, 
+            "mm": 2.3
+          }, 
+          "qpf_day": {
+            "in": 0.0, 
+            "mm": 0.0
+          }, 
+          "qpf_night": {
+            "in": 0.02, 
+            "mm": 0.5
+          }, 
+          "skyicon": "partlycloudy", 
+          "snow_allday": {
+            "cm": 0, 
+            "in": 0
+          }, 
+          "snow_day": {
+            "cm": 0, 
+            "in": 0
+          }, 
+          "snow_night": {
+            "cm": 0, 
+            "in": 0
+          }
+        }, 
+        {
+          "avehumidity": 71, 
+          "avewind": {
+            "degrees": 246, 
+            "dir": "WSW", 
+            "kph": 21, 
+            "mph": 13
+          }, 
+          "conditions": "Chance of Rain", 
+          "date": {
+            "ampm": "PM", 
+            "day": 29, 
+            "epoch": "1375153200", 
+            "hour": 23, 
+            "isdst": "1", 
+            "min": "00", 
+            "month": 7, 
+            "monthname": "July", 
+            "pretty": "11:00 PM EDT on July 29, 2013", 
+            "sec": 0, 
+            "tz_long": "America/Montreal", 
+            "tz_short": "EDT", 
+            "weekday": "Monday", 
+            "weekday_short": "Mon", 
+            "yday": 209, 
+            "year": 2013
+          }, 
+          "high": {
+            "celsius": "20", 
+            "fahrenheit": "68"
+          }, 
+          "icon": "partlycloudy", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif", 
+          "low": {
+            "celsius": "17", 
+            "fahrenheit": "63"
+          }, 
+          "maxhumidity": 80, 
+          "maxwind": {
+            "degrees": 247, 
+            "dir": "WSW", 
+            "kph": 24, 
+            "mph": 15
+          }, 
+          "minhumidity": 64, 
+          "period": 3, 
+          "pop": 20, 
+          "qpf_allday": {
+            "in": 0.11, 
+            "mm": 2.8
+          }, 
+          "qpf_day": {
+            "in": 0.05, 
+            "mm": 1.3
+          }, 
+          "qpf_night": {
+            "in": 0.05, 
+            "mm": 1.3
+          }, 
+          "skyicon": "partlycloudy", 
+          "snow_allday": {
+            "cm": 0, 
+            "in": 0
+          }, 
+          "snow_day": {
+            "cm": 0, 
+            "in": 0
+          }, 
+          "snow_night": {
+            "cm": 0, 
+            "in": 0
+          }
+        }, 
+        {
+          "avehumidity": 73, 
+          "avewind": {
+            "degrees": 263, 
+            "dir": "West", 
+            "kph": 16, 
+            "mph": 10
+          }, 
+          "conditions": "Partly Cloudy", 
+          "date": {
+            "ampm": "PM", 
+            "day": 30, 
+            "epoch": "1375239600", 
+            "hour": 23, 
+            "isdst": "1", 
+            "min": "00", 
+            "month": 7, 
+            "monthname": "July", 
+            "pretty": "11:00 PM EDT on July 30, 2013", 
+            "sec": 0, 
+            "tz_long": "America/Montreal", 
+            "tz_short": "EDT", 
+            "weekday": "Tuesday", 
+            "weekday_short": "Tue", 
+            "yday": 210, 
+            "year": 2013
+          }, 
+          "high": {
+            "celsius": "23", 
+            "fahrenheit": "73"
+          }, 
+          "icon": "partlycloudy", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif", 
+          "low": {
+            "celsius": "18", 
+            "fahrenheit": "64"
+          }, 
+          "maxhumidity": 79, 
+          "maxwind": {
+            "degrees": 274, 
+            "dir": "West", 
+            "kph": 19, 
+            "mph": 12
+          }, 
+          "minhumidity": 65, 
+          "period": 4, 
+          "pop": 0, 
+          "qpf_allday": {
+            "in": 0.0, 
+            "mm": 0.0
+          }, 
+          "qpf_day": {
+            "in": 0.0, 
+            "mm": 0.0
+          }, 
+          "qpf_night": {
+            "in": 0.0, 
+            "mm": 0.0
+          }, 
+          "skyicon": "mostlysunny", 
+          "snow_allday": {
+            "cm": 0, 
+            "in": 0
+          }, 
+          "snow_day": {
+            "cm": 0, 
+            "in": 0
+          }, 
+          "snow_night": {
+            "cm": 0, 
+            "in": 0
+          }
+        }
+      ]
+    }, 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    "txt_forecast": {
+      "date": "8:00 PM EDT", 
+      "forecastday": [
+        {
+          "fcttext": "Mostly cloudy in the morning, then overcast with a chance of rain. High of 75F. Winds from the South at 10 to 15 mph. Chance of rain 30%.", 
+          "fcttext_metric": "Mostly cloudy in the morning, then overcast with a chance of rain. High of 24C. Breezy. Winds from the South at 15 to 25 km/h. Chance of rain 30%.", 
+          "icon": "chancerain", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/chancerain.gif", 
+          "period": 0, 
+          "pop": "30", 
+          "title": "Saturday"
+        }, 
+        {
+          "fcttext": "Overcast with a chance of rain, then a chance of a thunderstorm and rain after midnight. Low of 64F. Winds from the South at 10 to 15 mph. Chance of rain 60%.", 
+          "fcttext_metric": "Overcast with a chance of rain, then a chance of a thunderstorm and rain after midnight. Low of 18C. Breezy. Winds from the South at 15 to 20 km/h. Chance of rain 60%.", 
+          "icon": "chancetstorms", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/chancetstorms.gif", 
+          "period": 1, 
+          "pop": "60", 
+          "title": "Saturday Night"
+        }, 
+        {
+          "fcttext": "Partly cloudy with thunderstorms. High of 72F. Breezy. Winds from the SW at 10 to 20 mph. Chance of rain 50%.", 
+          "fcttext_metric": "Partly cloudy with thunderstorms. High of 22C. Breezy. Winds from the SW at 20 to 25 km/h. Chance of rain 50%.", 
+          "icon": "tstorms", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/tstorms.gif", 
+          "period": 2, 
+          "pop": "50", 
+          "title": "Sunday"
+        }, 
+        {
+          "fcttext": "Partly cloudy. Low of 59F. Winds from the WSW at 5 to 15 mph.", 
+          "fcttext_metric": "Partly cloudy. Low of 15C. Breezy. Winds from the WSW at 10 to 20 km/h.", 
+          "icon": "partlycloudy", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif", 
+          "period": 3, 
+          "pop": "0", 
+          "title": "Sunday Night"
+        }, 
+        {
+          "fcttext": "Partly cloudy with a chance of rain. High of 68F. Winds from the WSW at 10 to 15 mph. Chance of rain 20%.", 
+          "fcttext_metric": "Partly cloudy with a chance of rain. High of 20C. Breezy. Winds from the WSW at 20 to 25 km/h.", 
+          "icon": "partlycloudy", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif", 
+          "period": 4, 
+          "pop": "20", 
+          "title": "Monday"
+        }, 
+        {
+          "fcttext": "Partly cloudy with a chance of rain in the evening, then clear. Low of 63F. Winds from the West at 10 to 15 mph. Chance of rain 40%.", 
+          "fcttext_metric": "Partly cloudy with a chance of rain in the evening, then clear. Low of 17C. Breezy. Winds from the West at 15 to 20 km/h. Chance of rain 40%.", 
+          "icon": "chancerain", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/chancerain.gif", 
+          "period": 5, 
+          "pop": "40", 
+          "title": "Monday Night"
+        }, 
+        {
+          "fcttext": "Partly cloudy in the morning, then clear. High of 73F. Winds from the West at 10 to 15 mph.", 
+          "fcttext_metric": "Partly cloudy in the morning, then clear. High of 23C. Breezy. Winds from the West at 15 to 20 km/h.", 
+          "icon": "partlycloudy", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif", 
+          "period": 6, 
+          "pop": "0", 
+          "title": "Tuesday"
+        }, 
+        {
+          "fcttext": "Clear in the evening, then partly cloudy. Low of 64F. Winds from the WSW at 5 to 10 mph.", 
+          "fcttext_metric": "Clear in the evening, then partly cloudy. Low of 18C. Winds from the WSW at 5 to 15 km/h.", 
+          "icon": "clear", 
+          "icon_url": "http://icons-ak.wxug.com/i/c/k/clear.gif", 
+          "period": 7, 
+          "pop": "0", 
+          "title": "Tuesday Night"
+        }
+      ]
+    }
+  }, 
+  "response": {
+    "features": {
+      "forecast": 1
+    }, 
+    "termsofService": "http://www.wunderground.com/weather/api/d/terms.html", 
+    "version": "0.1"
+  }
+}

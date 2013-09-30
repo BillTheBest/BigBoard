@@ -8,6 +8,12 @@ Configuration
 - Must configure urlPrefix to set hostname, port, and API key.
 
 
+Features
+--------
+
+- Show the last few tv shows that Sickbeard has received.
+
+
 Notes
 -----
 
@@ -51,6 +57,7 @@ Notes
     "message": "", 
     "result": "success"
 });
+
 
 - Reference:
 

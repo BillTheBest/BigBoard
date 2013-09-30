@@ -1,0 +1,53 @@
+.weatherWundergroundForecastContainer {
+  border-radius: 5px;
+  /* background-color: #232526; */
+  /* background-image: -webkit-linear-gradient(top, #36393B 0%, #232526 100%); */
+  background: -webkit-linear-gradient(top, rgb(54,57,59) 0%, rgb(35,37, 38) 100%);
+  color: rgb(170, 170, 170);
+}
+
+.weatherWundergroundForecast {
+  width: 890px;
+  height: 175px;
+  margin-top: 5px;
+}
+
+.weatherWundergroundForecast .day {
+  float: left;
+  width: 220px;
+  height: 160px;
+}
+
+.weatherWundergroundForecast .icon {
+  width: 100px;
+  height: 80px;
+  margin: 0px auto 0px auto; 
+  background-size : 100px 80px;
+  background-image: url('../images/caution.svg');
+}
+
+.weatherWundergroundForecast .condition {
+  width: 220px;
+  text-align: center;
+  height: 25px;
+  font-size: 15px;
+}
+
+.weatherWundergroundForecast .highlow {
+  width: 220px;
+  text-align: center;
+  margin: 5px 0 8px 0;
+  height: 20px;
+  font-size: 20px;
+  font-weight: normal
+}
+
+.weatherWundergroundForecast .weekday {
+  width: 220px;
+  text-align: center;
+  height: 25px;
+  font-size: 25px;
+  margin: 0 0 5px 0;
+}
+
+

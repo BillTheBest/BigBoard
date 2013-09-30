@@ -1,5 +1,5 @@
 /**
- * The WeatherWunderground object
+ * The weatherWundergroundForecast object
  * 
  * @author gturner
  * 
@@ -16,7 +16,7 @@
  * @param {string}
  *          query - Wunderground API query string, eg '/Canada/Toronto.json'.
  */
-function WeatherWunderground( id, interval, apiKey, query ) {
+function weatherWundergroundForecast( id, interval, apiKey, query ) {
 
   // Properties
   this.id = id;
@@ -24,7 +24,7 @@ function WeatherWunderground( id, interval, apiKey, query ) {
   this.apiKey = apiKey;
   this.query = query;
   
-  console.log( 'WeatherWunderground constructed with id: ' + this.id + ' interval: ' + this.interval + ' apiKey: '
+  console.log( 'weatherWundergroundForecast constructed with id: ' + this.id + ' interval: ' + this.interval + ' apiKey: '
       + this.apiKey + ' query: ' + this.query );
   
   // Timer identifier
@@ -32,18 +32,18 @@ function WeatherWunderground( id, interval, apiKey, query ) {
   
   // Path details
   this.applicationPath = "/BigBoard/"
-  this.pluginPath = this.applicationPath + "plugins/weather-wunderground";
+  this.pluginPath = this.applicationPath + "plugins/weather-wunderground-forecast";
   
   // Adding css for plugin to page.
   $( 'head' ).append(
-      '<link rel="stylesheet" href="' + this.pluginPath + '/css/weather-wunderground.css" type="text/css" />' );
+      '<link rel="stylesheet" href="' + this.pluginPath + '/css/weather-wunderground-forecast.css" type="text/css" />' );
 }
 
 
 /**
  * Start updates.
  */
-WeatherWunderground.prototype.startUpdates = function() {
+weatherWundergroundForecast.prototype.startUpdates = function() {
 
   console.log( 'startUpdates called' );
   
@@ -54,7 +54,7 @@ WeatherWunderground.prototype.startUpdates = function() {
 /**
  * Stop updates.
  */
-WeatherWunderground.prototype.stopUpdates = function() {
+weatherWundergroundForecast.prototype.stopUpdates = function() {
 
   console.log( 'stopUpdates called' );
   
@@ -65,11 +65,11 @@ WeatherWunderground.prototype.stopUpdates = function() {
 /**
  * Request update method.
  */
-WeatherWunderground.prototype.update = function() {
+weatherWundergroundForecast.prototype.update = function() {
 
   console.log( 'update called' );
   
-  $.getJSON( 'http://api.wunderground.com/api/' + this.apiKey + '/conditions/q' + this.query + '?callback=?', $.proxy(
+  $.getJSON( 'http://api.wunderground.com/api/' + this.apiKey + '/forecast/q' + this.query + '?callback=?', $.proxy(
       this.receivedData, this ) );
 }
 
@@ -77,52 +77,42 @@ WeatherWunderground.prototype.update = function() {
 /**
  * Callback method.
  */
-WeatherWunderground.prototype.receivedData = function( data ) {
+weatherWundergroundForecast.prototype.receivedData = function( data ) {
 
   console.log( 'receivedData called' );
   
-  // console.log( 'station_id: ' + data.current_observation.station_id );
-  // console.log( 'observation_time: ' + data.current_observation.observation_time );
-  // console.log( 'weather: ' + data.current_observation.weather );
-  // console.log( 'temp_c: ' + data.current_observation.temp_c );
-  // console.log( 'relative_humidity: ' + data.current_observation.relative_humidity );
-  // console.log( 'wind_dir: ' + data.current_observation.wind_dir );
-  // console.log( 'wind_kph: ' + data.current_observation.wind_kph );
-  // console.log( 'wind_gust_kph: ' + data.current_observation.wind_gust_kph );
-  // console.log( 'feelslike_c: ' + data.current_observation.feelslike_c );
-  // console.log( 'precip_today_metric: ' + data.current_observation.precip_today_metric );
-  
-  var html = "<div class='conditionIcon'>" + 
-    
-    "<div class='icon'></div>" +
-    "<div class='condition'>" + data.current_observation.weather + "</div>" +
-    
-  "</div>" + 
-  
-  "<div class='highlights'>" + 
-    "<div class='temperature'>" + data.current_observation.temp_c.toFixed(1) + "&deg;C</div>" + 
-    "<div class='city'>" + data.current_observation.display_location.city + "</div>" + 
-  "</div>" +
-      
-      
-      "<div class='details'>" + "<div class='wind'>" + data.current_observation.wind_dir + " "
-      + data.current_observation.wind_kph + " km/h gust " + data.current_observation.wind_gust_kph + " km/h</div>"
-      + "<div class='description'>" + data.current_observation.relative_humidity + " humidity</div>" + "<div class='date'>"
-      + data.current_observation.observation_time + "</div>" + "</div>";
+ 
+//  console.log( 'observation_time: ' + data.current_observation.observation_time );
+//  console.log( 'weather: ' + data.current_observation.weather );
+//  console.log( 'temp_c: ' + data.current_observation.temp_c );
 
-  var weatherUrl = this.translateCondition( data.current_observation.weather );
+  var forecastday = data.forecast.simpleforecast.forecastday
   
+  var html = "";
+    
+  for( var i = 0; i < forecastday.length; i++ ) {
+
+    var weatherUrl = this.translateCondition( forecastday[i].conditions ); 
+    
+    html += "<div class='day'>" +
+    "  <div class='weekday'>" + forecastday[i].date.weekday + "</div>" +
+    "  <div class='icon' style='background-image:url(" + weatherUrl + ")';></div>" +
+    "  <div class='highlow'>" +  forecastday[i].low.celsius + "&deg;C - " +  forecastday[i].high.celsius + "&deg;C</div> " +
+    "  <div class='condition'>" + forecastday[i].conditions + "</div>" +
+    "</div>"
+
+  }
+
   var thisId = this.id;
   
-  console.log( 'html: ' + html );
+  //console.log( 'html: ' + html );
   
-  $( "#" + thisId + " .WeatherWunderground" ).fadeOut(
+  $( "#" + thisId + " .weatherWundergroundForecast" ).fadeOut(
 
   function() {
 
-    $( "#" + thisId + " .WeatherWunderground" ).html( html );
-    $( "#" + thisId + " .WeatherWunderground .icon" ).css( 'background-image', 'url(' + weatherUrl + ')' );
-    $( "#" + thisId + " .WeatherWunderground" ).fadeIn();
+    $( "#" + thisId + " .weatherWundergroundForecast" ).html( html );
+    $( "#" + thisId + " .weatherWundergroundForecast" ).fadeIn();
   } );
 }
 
@@ -140,7 +130,7 @@ WeatherWunderground.prototype.receivedData = function( data ) {
  * 
  * @return {String} Image asset path
  */
-WeatherWunderground.prototype.translateCondition = function( condition ) {
+weatherWundergroundForecast.prototype.translateCondition = function( condition ) {
 
   condition = condition.trim();
   

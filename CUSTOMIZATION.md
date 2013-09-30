@@ -14,11 +14,4 @@ Instructions
 
 - The default web app page contains links to example pages for each of the plugins.
 
-
 - The **demo.html** page that was copied is a starting point for customization.
-
-
-
-
-
-
