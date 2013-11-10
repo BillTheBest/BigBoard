@@ -26,34 +26,36 @@ Server Uptime
 Inspiration
 -----------
 
+- Other:
+http://dribbble.com/shots/1216314-Dark-Stats-Dashboard?list=following
+
+
 - Dashboards:
+http://www.geckoboard.com/
+https://demo.geckoboard.com/dashboard/D66E964F5F044B85
+https://metrics.librato.com/
+http://ducksboard.com/
 
-    http://www.geckoboard.com/
-    https://demo.geckoboard.com/dashboard/D66E964F5F044B85
-    https://metrics.librato.com/
-    http://ducksboard.com/
+https://www.leftronic.com/
 
-    https://www.leftronic.com/
+http://shopify.github.com/dashing/
 
-    http://shopify.github.com/dashing/
 
 - Articles:
-
-    http://techcrunch.com/2011/04/29/jack-dorsey-shares-some-big-square-numbers-341688-readers-shipped-137m-total-flow/
-    http://www.dundas.com/dashboard/online-examples/screenshots/Wind-and-Solar-Dashboard.aspx
-    http://www.jebriggs.com/blog/2010/09/business-ambient-displays/
+http://techcrunch.com/2011/04/29/jack-dorsey-shares-some-big-square-numbers-341688-readers-shipped-137m-total-flow/
+http://www.dundas.com/dashboard/online-examples/screenshots/Wind-and-Solar-Dashboard.aspx
+http://www.jebriggs.com/blog/2010/09/business-ambient-displays/
 
 - Monitoring:
-    
-    http://demo.munin-monitoring.org/
-    http://www.haque.co.uk/pachube.php
+http://demo.munin-monitoring.org/
+http://www.haque.co.uk/pachube.php
+
 
 - Graphing:
-    
-    http://www.humblesoftware.com/flotr2/documentation
-    
-- Data:
+http://www.humblesoftware.com/flotr2/documentation
 
-    http://couchdb.apache.org/
-    https://tempo-db.com/
-    
+
+- Data:
+http://couchdb.apache.org/
+https://tempo-db.com/
+
