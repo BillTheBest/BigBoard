@@ -153,7 +153,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   
 
   if( condition == "Drifting Snow" || condition == "Light Snowshower" || condition == "Light Snow"
-      || condition == "Snowshower" ) {
+      || condition == "Snowshower" || condition == "Chance of Snow" ) {
     
     return this.pluginPath + "/images/snow-day.svg";
   }
@@ -225,6 +225,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   // Light Rain
   // Haze
   // Thunderstorms and Rain
+  // Chance of Snow
 
   // Chance of Rain
   // Chance of a Thunderstorm
