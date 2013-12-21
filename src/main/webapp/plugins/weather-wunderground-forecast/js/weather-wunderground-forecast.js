@@ -143,7 +143,7 @@ weatherWundergroundForecast.prototype.translateCondition = function( condition )
   
 
   if( condition == "Drifting Snow" || condition == "Light Snowshower" || condition == "Light Snow"
-      || condition == "Snowshower" || condition == "Chance of Snow" ) {
+      || condition == "Snowshower" || condition == "Chance of Snow" || condition == "Snow" ) {
     
     return this.pluginPath + "/images/snow-day.svg";
   }
@@ -155,7 +155,7 @@ weatherWundergroundForecast.prototype.translateCondition = function( condition )
   }
   
 
-  if( condition == "Freezing Rain" ) {
+  if( condition == "Freezing Rain" || condition == "Light Freezing Rain" ) {
     
     return this.pluginPath + "/images/rain-freezing-day.svg";
   }
@@ -216,6 +216,8 @@ weatherWundergroundForecast.prototype.translateCondition = function( condition )
   // Haze
   // Thunderstorms and Rain
   // Chance of Snow
+  // Snow
+  // Light Freezing Rain
 
   // Chance of Rain
   // Chance of a Thunderstorm
