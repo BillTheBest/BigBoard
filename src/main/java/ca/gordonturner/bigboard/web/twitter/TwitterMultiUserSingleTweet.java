@@ -16,7 +16,7 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.auth.AccessToken;
+import twitter4j.conf.ConfigurationBuilder;
 
 /**
  * @author gturner
@@ -29,6 +29,8 @@ public class TwitterMultiUserSingleTweet
   Logger logger = Logger.getLogger( TwitterMultiUserSingleTweet.class );
 
   private HashMap<String, Tweets> tweetsCollection;
+
+  private TwitterFactory twitterFactory;
 
   // The Twitter API will throttle you for more then 150 hits / hour.
   private int refreshPeriodInMinutes = 15;
@@ -55,6 +57,14 @@ public class TwitterMultiUserSingleTweet
   public void init()
   {
     tweetsCollection = new HashMap<String, Tweets>();
+
+    ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+    configurationBuilder.setDebugEnabled( true );
+    configurationBuilder.setOAuthConsumerKey( consumerKey );
+    configurationBuilder.setOAuthConsumerSecret( consumerSecret );
+    configurationBuilder.setOAuthAccessToken( accessToken );
+    configurationBuilder.setOAuthAccessTokenSecret( accessTokenSecret );
+    twitterFactory = new TwitterFactory( configurationBuilder.build() );
   }
 
 
@@ -189,13 +199,9 @@ public class TwitterMultiUserSingleTweet
     logger.info( "Updating twitter statuses" );
 
     Paging paging = new Paging( 1, numberOfTweets );
-    
-    Twitter twitter = new TwitterFactory().getInstance();
-    twitter.setOAuthConsumer(consumerKey, consumerSecret);
-    twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
-    
-    // TOOD: Move this to a factory method.
 
+    Twitter twitter = twitterFactory.getInstance();
+    
     try
     {
       tweets.setTwitterStatuses( twitter.getUserTimeline( tweets.getScreenName(), paging ) );
@@ -214,12 +220,7 @@ public class TwitterMultiUserSingleTweet
   private void updateTwitterPicture( Tweets tweets )
   {
     logger.info( "Updating twitter profile image" );
-    
-    // TOOD: Move this to a factory method.
-    Twitter twitter = new TwitterFactory().getInstance();
-    twitter.setOAuthConsumer(consumerKey, consumerSecret);
-    twitter.setOAuthAccessToken(new AccessToken(accessToken, accessTokenSecret));
-    
+        
     tweets.setProfileImageUrl( tweets.getTwitterStatuses().get( 0 ).getUser().getProfileImageURLHttps() );
 
     logger.debug( "Updating twitter profile image to: " + tweets.getProfileImageUrl() );

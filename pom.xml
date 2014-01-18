@@ -27,7 +27,7 @@
 		<dependency>
 			<groupId>org.twitter4j</groupId>
 			<artifactId>twitter4j-core</artifactId>
-			<version>3.0.3</version>
+			<version>3.0.5</version>
 		</dependency>
 
 		<!-- END twitter4j -->
@@ -150,10 +150,16 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.1</version>
         <configuration>
-          <contextFile>${basedir}/src/main/webapp/META-INF/context.xml</contextFile>
+          <!-- Used for specifying the properties for running tomcat7:run. -->
+          <!-- NOTE: Requires the directory BigBoard-tomcatconf in the same directory as BigBoard. -->
+          <additionalConfigFilesDir>../BigBoard-tomcatconf</additionalConfigFilesDir>
+
+          <!-- Used for deployment to a stand alone tomcat server. -->
+          <!-- NOTE: Define tomcat-url, tomcat-username and tomcat-password in ~/.m2/settings.xml. -->
+          <!-- NOTE: Define the user in your server's conf/tomcat-users.xml. -->
+          <url>${tomcat-url}</url>
           <username>${tomcat-username}</username>
           <password>${tomcat-password}</password>
-          <url>${tomcat-url}</url>
         </configuration>
       </plugin>
 
@@ -240,48 +246,6 @@
 			<url>http://download.java.net/maven/2/</url>
 		</repository>
 
-		<repository>
-			<id>apache.snapshots</id>
-			<url>https://repository.apache.org/content/repositories/snapshots
-			</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-
 	</repositories>
-
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>apache.snapshots</id>
-			<name>Apache Snapshots</name>
-			<url>https://repository.apache.org/content/repositories/snapshots
-			</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
-  <profiles>
-    <profile>
-        <id>localhost</id>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-        </activation>
-        <properties>
-            <tomcat-username>root</tomcat-username>
-            <tomcat-password>Seekrit</tomcat-password>
-            <tomcat-url>http://localhost:8080/manager/html</tomcat-url>
-        </properties>
-    </profile>
-  </profiles>
 
 </project>

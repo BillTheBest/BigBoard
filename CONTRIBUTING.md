@@ -14,7 +14,7 @@ Developing - Setup
 - To setup eclipse for BigBoard, please run:
 
 ```
- mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
+mvn eclipse:eclipse -DdownloadSources=true -DdownloadJavadocs=true
 ```
 
 - Where:
