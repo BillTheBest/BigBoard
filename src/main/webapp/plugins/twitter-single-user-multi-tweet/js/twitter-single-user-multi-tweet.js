@@ -85,7 +85,7 @@ TwitterSingleUserMultiTweet.prototype.receivedData = function( data ) {
         var html = "<div class='TwitterSingleUserMultiTweetImage'>" + "<img src='" + data.profileImageUrl + "' />"
             + "</div>";
         
-        for( var i = 0; i < 5; i++ ) {
+        for( var i = 0; i < data.tweet.length; i++ ) {
           
           var createdAt = new Date( data.tweet[i].createdAt );
           var oldDate = new Date();
