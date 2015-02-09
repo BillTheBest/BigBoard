@@ -153,7 +153,7 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   
 
   if( condition == "Drifting Snow" || condition == "Light Snowshower" || condition == "Light Snow"
-      || condition == "Snowshower" || condition == "Chance of Snow" || condition == "Snow" ) {
+      || condition == "Snow Showers" || condition == "Chance of Snow" || condition == "Snow" ) {
     
     return this.pluginPath + "/images/snow-day.svg";
   }
@@ -165,8 +165,15 @@ WeatherWunderground.prototype.translateCondition = function( condition ) {
   }
   
 
-  if( condition == "Freezing Rain" || condition == "Light Freezing Rain" ) {
+  if( condition == "Freezing Rain" ) {
     
+    return this.pluginPath + "/images/rain-freezing-day.svg";
+  }
+  
+
+  if( condition == "Light Freezing Rain" ) {
+    
+    condition = "Light Frz Rain"
     return this.pluginPath + "/images/rain-freezing-day.svg";
   }
   
