@@ -32,15 +32,22 @@ import com.fasterxml.jackson.core.JsonToken;
 public class UtilityAppFiguresSales
 {
 
-  public static final String appFiguresEndPointUrl = "https://api.appfigures.com/v1.1/sales/products/?products=";
+  public static final String appFiguresEndPointUrl = "https://api.appfigures.com/v2/reports/sales?products=";
 
   public static final String appFiguresHost = "api.appfigures.com";
 
-  @Value("${UtilityAppFiguresSales.appFiguresUsername}")
-  private String appFiguresUsername;
+  @Value("${UtilityAppFiguresSales.clientKey}")
+  private String clientKey;
 
-  @Value("${UtilityAppFiguresSales.appFiguresPassword}")
-  private String appFiguresPassword;
+  @Value("${UtilityAppFiguresSales.secretKey}")
+  private String secretKey;
+
+  @Value("${UtilityAppFiguresSales.oauthToken}")
+  private String oauthToken;
+
+  @Value("${UtilityAppFiguresSales.oauthTokenSecret}")
+  private String oauthTokenSecret;
+
 
   Logger logger = Logger.getLogger( UtilityAppFiguresSales.class );
 
@@ -54,27 +61,29 @@ public class UtilityAppFiguresSales
   */
   @RequestMapping("/UtilityAppFiguresSales.html")
   @ResponseBody
-  public HashMap<String, Object> handleUtilityAppFiguresSales( @RequestParam(value = "id", required = true)
-  String id, @RequestParam(value = "appFiguresId", required = true)
-  String appFiguresId )
+  public HashMap<String, Object> handleUtilityAppFiguresSales( @RequestParam(value = "id", required = true) String id,
+      @RequestParam(value = "appFiguresId", required = true) String appFiguresId )
   {
     logger.debug( "Called with id: '" + id + "' appFiguresId: '" + appFiguresId + "'" );
 
     String sales = "N/A";
 
 
-    if( !StringUtils.isEmpty( appFiguresUsername ) && !StringUtils.isEmpty( appFiguresPassword ) )
+    if( !StringUtils.isEmpty( clientKey ) || !StringUtils.isEmpty( secretKey ) || !StringUtils.isEmpty( oauthToken )
+        || !StringUtils.isEmpty( oauthTokenSecret ) )
     {
-      logger.debug( "appFiguresUsername and appFiguresPassword are not empty, calling end point" );
+      logger.debug( "Appears to be configured correctly, calling end point" );
 
       // Make request
       DefaultHttpClient httpclient = new DefaultHttpClient();
       try
       {
-        httpclient.getCredentialsProvider().setCredentials( new AuthScope( appFiguresHost, 443 ),
-            new UsernamePasswordCredentials( appFiguresUsername, appFiguresPassword ) );
-
         HttpGet httpget = new HttpGet( appFiguresEndPointUrl + appFiguresId );
+
+        String headerValue = "OAuth oauth_signature_method=PLAINTEXT, oauth_consumer_key=" + clientKey
+            + ", oauth_token=" + oauthToken + ", oauth_signature=" + secretKey + "&" + oauthTokenSecret;
+
+        httpget.setHeader( "Authorization", headerValue );
 
         HttpResponse response = httpclient.execute( httpget );
         HttpEntity entity = response.getEntity();
@@ -117,7 +126,7 @@ public class UtilityAppFiguresSales
     }
     else
     {
-      logger.debug( "appFiguresUsername and appFiguresPassword are empty, calling end point" );
+      logger.debug( "Required configuration properies are empty, please fix, calling NOT end point." );
     }
 
 
@@ -129,5 +138,4 @@ public class UtilityAppFiguresSales
     json.put( "sales", sales );
     return json;
   }
-
 }
