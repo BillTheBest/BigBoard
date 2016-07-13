@@ -69,7 +69,7 @@ UtilityAppFiguresSales.prototype.update = function() {
 
   console.log( 'update called' );
   
-  $.getJSON( this.applicationPath + "./service/UtilityAppFiguresSales.html", {
+  $.getJSON( this.applicationPath + "./service/UtilityAppFiguresSales.json", {
     id : this.id,
     appFiguresId : this.appFiguresId
   }, $.proxy( this.receivedData, this ) );

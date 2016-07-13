@@ -62,7 +62,7 @@ TwitterTrendingTopics.prototype.update = function() {
 
   console.log( 'update called' );
   
-  $.getJSON( this.applicationPath + "./service/TwitterTrendingTopics.html", {
+  $.getJSON( this.applicationPath + "./service/TwitterTrendingTopics.json", {
     woeid : this.woeid
   }, $.proxy( this.receivedData, this ) );
 }

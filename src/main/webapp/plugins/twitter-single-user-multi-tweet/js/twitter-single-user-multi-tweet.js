@@ -62,7 +62,7 @@ TwitterSingleUserMultiTweet.prototype.update = function() {
 
   console.log( 'update called' );
   
-  $.getJSON( this.applicationPath + "./service/TwitterSingleUserMultiTweet.html", {
+  $.getJSON( this.applicationPath + "./service/TwitterSingleUserMultiTweet.json", {
     screenName : this.screenName
   }, $.proxy( this.receivedData, this ) );
 }

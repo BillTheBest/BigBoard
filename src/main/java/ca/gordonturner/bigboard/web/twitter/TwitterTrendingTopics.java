@@ -100,7 +100,7 @@ public class TwitterTrendingTopics
   /*
    * https://api.twitter.com/1/trends/daily.json
    */
-  @RequestMapping("/TwitterTrendingTopics.html")
+  @RequestMapping("/TwitterTrendingTopics.json")
   public @ResponseBody
   HashMap<String, String[]> handleTwitterTrendingTopics( @RequestParam(value = "woeid", required = true)
   String woeid )

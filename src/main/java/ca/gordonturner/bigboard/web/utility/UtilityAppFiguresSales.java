@@ -6,8 +6,6 @@ import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -59,7 +57,7 @@ public class UtilityAppFiguresSales
   /*
   *
   */
-  @RequestMapping("/UtilityAppFiguresSales.html")
+  @RequestMapping("/UtilityAppFiguresSales.json")
   @ResponseBody
   public HashMap<String, Object> handleUtilityAppFiguresSales( @RequestParam(value = "id", required = true) String id,
       @RequestParam(value = "appFiguresId", required = true) String appFiguresId )

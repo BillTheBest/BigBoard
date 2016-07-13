@@ -59,7 +59,7 @@ UtilityPeopleInSpace.prototype.update = function() {
 
   console.log( 'update called' );
   
-  $.getJSON( this.applicationPath + "./service/UtilityPeopleInSpace.html", $.proxy( this.receivedData, this ) );
+  $.getJSON( this.applicationPath + "./service/UtilityPeopleInSpace.json", $.proxy( this.receivedData, this ) );
 }
 
 

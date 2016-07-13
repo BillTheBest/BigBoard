@@ -1,0 +1,32 @@
+/* BEGIN UtilitySavings */
+.UtilitySavingsContainer {
+  /* background-color: #232526; */
+  /* background-image: -webkit-linear-gradient(top, #36393B 0%, #232526 100%); */
+  background: -webkit-linear-gradient(top, rgb(54,57,59) 0%, rgb(35,37, 38) 100%);
+	color: rgb(170, 170, 170);
+  border-radius: 5px;/
+}
+
+.UtilitySavings {
+	width:  350px;
+	height: 150px;
+	margin: auto;
+}
+
+.UtilitySavings .Label {
+ width: 300px;
+ text-align: center;
+ /* NOTE: The margin right should match .UtilitySavings .Value width. */
+ margin-right: 50px;
+ font-size: 50px;
+}
+
+.UtilitySavings .Value {
+ /* NOTE: The width should match .UtilitySavings .Label margin. */
+ width: 300px;
+ text-align: center;
+ color: #FF9900;
+ font-size: 50px;
+}
+
+/* END UtilitySavings */

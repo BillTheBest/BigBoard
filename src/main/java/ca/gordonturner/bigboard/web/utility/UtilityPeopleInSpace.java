@@ -38,7 +38,7 @@ public class UtilityPeopleInSpace
   /*
   *
   */
-  @RequestMapping("/UtilityPeopleInSpace.html")
+  @RequestMapping("/UtilityPeopleInSpace.json")
   @ResponseBody
   public HashMap<String, Object> handleUtilityPeopleInSpace()
   {

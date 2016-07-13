@@ -67,7 +67,7 @@ TwitterMultiUserSingleTweet.prototype.update = function() {
   currentTweetIndex = this.model.screenNames[currentScreenNamesIndex].currentTweetIndex;
   // console.log( 'Requesting screenName: ' + screenName + ' currentTweetIndex: ' + currentTweetIndex );
   
-  $.getJSON( this.applicationPath + "./service/TwitterMultiUserSingleTweet.html", {
+  $.getJSON( this.applicationPath + "./service/TwitterMultiUserSingleTweet.json", {
     screenName : screenName,
     currentTweetIndex : currentTweetIndex
   }, $.proxy( this.receivedData, this ) );

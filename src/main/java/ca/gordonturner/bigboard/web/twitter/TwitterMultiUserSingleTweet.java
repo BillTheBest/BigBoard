@@ -100,7 +100,7 @@ public class TwitterMultiUserSingleTweet
   /*
    *
    */
-  @RequestMapping("/TwitterMultiUserSingleTweet.html")
+  @RequestMapping("/TwitterMultiUserSingleTweet.json")
   public @ResponseBody
   HashMap<String, String> handleTwitterMultiUserSingleTweet( @RequestParam(value = "screenName", required = true)
   String screenName, @RequestParam(value = "currentTweetIndex", required = false)
