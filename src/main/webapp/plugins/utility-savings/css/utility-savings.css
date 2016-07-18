@@ -8,13 +8,13 @@
 }
 
 .UtilitySavings {
-	width:  350px;
+	width:  265px;
 	height: 150px;
 	margin: auto;
 }
 
 .UtilitySavings .Label {
- width: 300px;
+ width: 265px;
  text-align: center;
  /* NOTE: The margin right should match .UtilitySavings .Value width. */
  margin-right: 50px;
@@ -23,7 +23,7 @@
 
 .UtilitySavings .Value {
  /* NOTE: The width should match .UtilitySavings .Label margin. */
- width: 300px;
+ width: 265px;
  text-align: center;
  color: #FF9900;
  font-size: 50px;
